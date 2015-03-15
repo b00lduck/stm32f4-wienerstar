@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="postbuild" name="test">
+  <property name="project.name" value="branch_abe"/>
+  <property name="project.debug" value="Debug"/>
+  <property name="project.obj" value="Debug/obj"/>
+  <property name="project.bin" value="Debug/bin"/>
+
+  <!-- associate current path to the link file path-->
+  <dirname file="$${basedir}" property="linkdir"/>
+
+  <target name="beforebuild">
+    <exec executable="cmd">
+      <arg line="/C &quot;D:\CooCox\CoIDE\workspace\stm32_play\branches\abe\data\makedata.bat&quot;"/>
+    </exec>
+  </target>
+  
+  <target depends="compile" name="postbuild">
+    <exec executable="cmd">
+      <arg line="/C &quot;${gcc.home}\arm-none-eabi-objdump&quot; -d &quot;${project.bin}\${project.name}.elf&quot; &gt; &quot;${project.bin}\${project.name}.txt&quot;"/>
+    </exec>
+    <exec executable="cmd">
+      <arg line="/C &quot;${gcc.home}\arm-none-eabi-objcopy&quot; -O binary &quot;${project.bin}\${project.name}.elf&quot; &quot;${project.bin}\${project.name}.bin&quot;"/>
+    </exec>
+    <exec executable="cmd">
+      <arg line="/C &quot;${gcc.home}\arm-none-eabi-objcopy&quot; -O ihex &quot;${project.bin}\${project.name}.elf&quot; &quot;${project.bin}\${project.name}.hex&quot;"/>
+    </exec>
+    <exec dir="${basedir}\${project.bin}" executable="cmd">
+      <arg line="/C &quot;${gcc.home}\arm-none-eabi-size&quot; &quot;${project.name}.elf&quot;"/>
+    </exec>
+  </target>
+  
+  <taskdef resource="cpptasks.tasks"/>
+  <target depends="beforebuild" name="compile">
+    <mkdir dir="${project.bin}"/>
+    <mkdir dir="${project.obj}"/>
+    <cc debug="true" objdir="${project.obj}" outfile="${project.bin}/${project.name}.elf" outtype="executable" subsystem="console">
+      <!-- compile all the c source file in the project -->
+      
+      <fileset dir=".">
+        <include name="**/*.c"/>
+        <include name="**/*.s"/>
+      </fileset>
+      <project outfile="${project.name}.elf" overwrite="true" type="xcode"/>
+      
+      <!-- defines -->
+      <defineset>
+        <define name="USE_STDPERIPH_DRIVER"/>
+        <define name="STM32F4XX"/>
+        <define name="__FPU_PRESENT"/>
+        <define name="STM32F407VG"/>
+      </defineset>
+      
+      <!-- arm-none-eabi-gcc compiler arguments -->
+      <compilerarg value="-mcpu=cortex-m4"/>
+	    
+      <compilerarg value="-mthumb"/>
+      <compilerarg value="-Wall"/>      
+      
+      <compilerarg value="-O3"/>
+      
+      <compilerarg value="-Winline"/>
+      <compilerarg value="-mfpu=fpv4-sp-d16"/>
+      <compilerarg value="-mfloat-abi=hard"/>
+      <compilerarg value="-ffunction-sections"/>
+      <compilerarg value="-g"/>
+      
+      <!-- arm-none-eabi-gcc linker arguments -->
+      <linkerarg value="-O3"/>
+      <linkerarg value="-Map=${project.name}.map"/>
+      <linkerarg value="-mcpu=cortex-m4"/>
+      <linkerarg value="-mthumb"/>
+      <linkerarg value="-TD:\CooCox\CoIDE\workspace\stm32_play\branches\abe\mylink.ld"/>
+      <linkerarg value="-L${linkdir}"/>
+      <linkerarg value="--gc-sections"/>
+      <linkerarg value="-nostartfiles"/>
+    <includepath path="src/system"/>
+      <includepath path="src/system/cmsis"/>
+      <includepath path="src"/>
+      <includepath path="src/system/discovery"/>
+      <includepath path="src/system/cmsis/math"/>
+      <includepath path="src/system/STM32F4xx_StdPeriph_Driver/inc"/>
+      <!-- linked libraries -->
+      <libset dir="D:\CooCox\toolchain\arm-none-eabi\lib\armv7e-m\fpu\" libs="c"/>
+      <libset dir="D:\CooCox\toolchain\arm-none-eabi\lib\armv7e-m\fpu\" libs="m"/>
+      <libset dir="D:\CooCox\toolchain\arm-none-eabi\lib\armv7e-m\fpu\" libs="g"/>
+      <libset dir="D:\CooCox\toolchain\lib\gcc\arm-none-eabi\4.6.2\armv7e-m\fpu\" libs="gcc"/>
+    </cc>
+  </target>
+
+  <target name="clean">
+    <delete dir="${project.bin}"/>
+    <delete dir="${project.obj}"/>
+    <delete dir="${project.debug}"/>
+    <delete dir="${project.name}.elf.xcodeproj"/>
+  </target>
+  
+  <target depends="clean" name="rebuild">
+    <antcall target="postbuild"/>
+  </target>
+
+</project>
