@@ -22,6 +22,7 @@ uint8_t tram_fx[TEXTRAMSIZE] __attribute__ ((section (".ccmram")));
 void videoInit(void) {
 
 	RGB_GPIO_Config();
+	VideoSwitch_GPIO_Config();
 	HSYNC_GPIO_Config();
 	VSYNC_GPIO_Config();
 
@@ -33,6 +34,9 @@ void videoInit(void) {
 	videoInstance.tc_frame = 0;
 	videoInstance.tc_min = 0;
 	videoInstance.tc_sec = 0;
+
+	videoInstance.switchToBwAtLineSize = 0;
+	videoInstance.switchToColorAtLineSize = 0;
 
 	fixedFontInit(&fixedFontInstanceVga, font_vga8x16, 8, 16);
 }

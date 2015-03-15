@@ -32,14 +32,7 @@ REM %BIN2H% tellit.mod music > music_tellit.h
 REM %BIN2H% time-trap.mod music > music_timetrap.h
 REM %BIN2H% test.mod music > music_test.h
 REM %BIN2H% lotus2.mod music > music_lotus2.h
-%BIN2H% mikrofon_4ch music > mikrofon_4ch.h
-
-echo =======================================================
-ECHO Converting XM-files...
-echo =======================================================
-CD %DATADIR%\music\xm
-REM %BIN2H% test.xm music > music_test.h
-REM %BIN2H% hybridsong.xm music > music_hybridsong.h
+%BIN2H% mikrofon4ch.mod music > mikrofon4ch.h
 
 
 echo =======================================================
@@ -61,8 +54,8 @@ CD %DATADIR%\images\sprites
 REM %IMG2H% duck png 50 45
 REM %IMG2H% ducky png 17 15
 REM %IMG2H% badge png 40 40
-%IMG2H% ball png 32 32
-%IMG2H% ball_s png 16 16
+Rem %IMG2H% ball png 32 32
+Rem %IMG2H% ball_s png 16 16
 
 echo =======================================================
 ECHO Converting fonts

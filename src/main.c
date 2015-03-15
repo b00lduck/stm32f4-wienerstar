@@ -41,7 +41,14 @@ struct t_fontInstance fontInstanceXenon;
 
 // TestMode
 uint8_t testMode = 0;
+
+// Testmode backup vars
 enum e_videoMode testOldVideoMode;
+int16_t testOldSwitchToBw[MAX_SWITCHLIST_SIZE];
+uint8_t testOldSwitchToBwSize;
+int16_t testOldSwitchToColor[MAX_SWITCHLIST_SIZE];
+uint8_t testOldSwitchToColorSize;
+
 
 uint16_t lastMsec = 0;
 uint16_t frameCount = 0;
@@ -200,6 +207,19 @@ void EXTI0_IRQHandler(void) {
 #endif
 
 			testOldVideoMode = videoInstance.mode;
+
+			// Backup color switching
+			memcpy(testOldSwitchToColor, videoInstance.switchToColorAtLine, videoInstance.switchToColorAtLineSize * 2);
+			memcpy(testOldSwitchToBw, videoInstance.switchToBwAtLine, videoInstance.switchToBwAtLineSize * 2);
+			testOldSwitchToBwSize = videoInstance.switchToBwAtLineSize;
+			testOldSwitchToColorSize = videoInstance.switchToColorAtLineSize;
+
+			videoInstance.switchToColorAtLine[0] = 0;
+			videoInstance.switchToBwAtLine[0] = 202;
+			videoInstance.switchToColorAtLine[1] = 250;
+			videoInstance.switchToBwAtLineSize = 1;
+			videoInstance.switchToColorAtLineSize = 2;
+
 			if (videoInstance.mode != V320x240x8V) {
 				videoMode(V320x240x8V);
 			}
@@ -213,6 +233,12 @@ void EXTI0_IRQHandler(void) {
 			if (testOldVideoMode != V320x240x8V) {
 				videoMode(testOldVideoMode);
 			}
+			// restore color switching
+			videoInstance.switchToBwAtLineSize = testOldSwitchToBwSize;
+			videoInstance.switchToColorAtLineSize = testOldSwitchToColorSize;
+			memcpy(videoInstance.switchToColorAtLine, testOldSwitchToColor, videoInstance.switchToColorAtLineSize * 2);
+			memcpy(videoInstance.switchToBwAtLine, testOldSwitchToBw, videoInstance.switchToBwAtLineSize * 2);
+
 		}
 	}
 }

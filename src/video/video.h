@@ -17,6 +17,11 @@ enum e_videoMode {
 
 enum e_videoSyncPolarity { NEGATIVE, POSITIVE };
 
+#define MAX_SWITCHLIST_SIZE 10
+
+#define VIDEO_SWITCH_PORT GPIOB
+#define VIDEO_SWITCH_PORT_CLOCK RCC_AHB1Periph_GPIOB
+
 struct t_videoInstance {
 
 	uint16_t resx;
@@ -75,6 +80,11 @@ struct t_videoInstance {
 
 	// callback for freerun mode
 	void (*freerunCallback)(uint16_t x, uint16_t y);
+
+	uint8_t switchToBwAtLine[MAX_SWITCHLIST_SIZE];
+	uint8_t switchToBwAtLineSize;
+	uint8_t switchToColorAtLine[MAX_SWITCHLIST_SIZE];
+	uint8_t switchToColorAtLineSize;
 
 
 };

@@ -20,12 +20,12 @@
 		<pathentry include="D:/CooCox/toolchain/arm-none-eabi/include" kind="inc" path="" system="true"/>
 		<pathentry include="D:/CooCox/toolchain/lib/gcc/arm-none-eabi/4.6.2/include" kind="inc" path="" system="true"/>
 		<pathentry include="D:/CooCox/toolchain/lib/gcc/arm-none-eabi/4.6.2/include-fixed" kind="inc" path="" system="true"/>
-		<pathentry include="D:/CooCox/CoIDE/workspace/stm32_play/branches/daniel/src" kind="inc" path="" system="true"/>
-		<pathentry include="D:/CooCox/CoIDE/workspace/stm32_play/branches/daniel/src/system" kind="inc" path="" system="true"/>
-		<pathentry include="D:/CooCox/CoIDE/workspace/stm32_play/branches/daniel/src/system/cmsis" kind="inc" path="" system="true"/>
-		<pathentry include="D:/CooCox/CoIDE/workspace/stm32_play/branches/daniel/src/system/cmsis/math" kind="inc" path="" system="true"/>
-		<pathentry include="D:/CooCox/CoIDE/workspace/stm32_play/branches/daniel/src/system/discovery" kind="inc" path="" system="true"/>
-		<pathentry include="D:/CooCox/CoIDE/workspace/stm32_play/branches/daniel/src/system/STM32F4xx_StdPeriph_Driver/inc" kind="inc" path="" system="true"/>
+		<pathentry include="D:/CooCox/CoIDE/workspace/stm32play/src" kind="inc" path="" system="true"/>
+		<pathentry include="D:/CooCox/CoIDE/workspace/stm32play/src/system" kind="inc" path="" system="true"/>
+		<pathentry include="D:/CooCox/CoIDE/workspace/stm32play/src/system/cmsis" kind="inc" path="" system="true"/>
+		<pathentry include="D:/CooCox/CoIDE/workspace/stm32play/src/system/cmsis/math" kind="inc" path="" system="true"/>
+		<pathentry include="D:/CooCox/CoIDE/workspace/stm32play/src/system/discovery" kind="inc" path="" system="true"/>
+		<pathentry include="D:/CooCox/CoIDE/workspace/stm32play/src/system/STM32F4xx_StdPeriph_Driver/inc" kind="inc" path="" system="true"/>
 		<pathentry kind="mac" name="STM32F407VG" path="" value=""/>
 		<pathentry kind="mac" name="STM32F4XX" path="" value=""/>
 		<pathentry kind="mac" name="USE_STDPERIPH_DRIVER" path="" value=""/>

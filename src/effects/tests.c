@@ -11,6 +11,7 @@
  * draw a handy test image for calibrating the analog monitor
  */
 void drawTestGraphic(uint8_t *target) {
+
 	// top part of verticals
 	drawVerticalsNumLines(target,24);
 
@@ -127,9 +128,9 @@ void drawGradient(uint8_t *target, uint16_t x, uint16_t y, uint16_t width, uint1
 			break;
 
 		case 3: // grey
-			barWidth = width / 4.0f; // 4 bars
-			multi = 0b01010010;
-			bits = 2;
+			barWidth = width / 256.0f; // 256 bars
+			multi = 0b00000001;
+			bits = 8;
 			break;
 
 		default:
@@ -147,7 +148,7 @@ void drawGradient(uint8_t *target, uint16_t x, uint16_t y, uint16_t width, uint1
 	// copy first line "height-1" times
 	while(height--) {
 		memcpy(target,firstLineTarget,width);
-		target += videoInstance.resx;
+		target += videoInstance.resx; // stride
 	}
 
 }

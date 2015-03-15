@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project default="postbuild" name="test">
-  <property name="project.name" value="branch_abe"/>
+  <property name="project.name" value="stm32play"/>
   <property name="project.debug" value="Debug"/>
   <property name="project.obj" value="Debug/obj"/>
   <property name="project.bin" value="Debug/bin"/>
@@ -10,7 +10,7 @@
 
   <target name="beforebuild">
     <exec executable="cmd">
-      <arg line="/C &quot;D:\CooCox\CoIDE\workspace\stm32_play\branches\abe\data\makedata.bat&quot;"/>
+      <arg line="/C &quot;D:\CooCox\CoIDE\workspace\stm32play\data\makedata.bat&quot;"/>
     </exec>
   </target>
   
@@ -69,7 +69,7 @@
       <linkerarg value="-Map=${project.name}.map"/>
       <linkerarg value="-mcpu=cortex-m4"/>
       <linkerarg value="-mthumb"/>
-      <linkerarg value="-TD:\CooCox\CoIDE\workspace\stm32_play\branches\abe\mylink.ld"/>
+      <linkerarg value="-TD:\CooCox\CoIDE\workspace\stm32play\mylink.ld"/>
       <linkerarg value="-L${linkdir}"/>
       <linkerarg value="--gc-sections"/>
       <linkerarg value="-nostartfiles"/>

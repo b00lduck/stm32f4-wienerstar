@@ -10,4 +10,5 @@
 #define HSYNC_TIMER_CC2		50 // start of line interrupt
 
 void HSYNC_GPIO_Config(void);
+void VideoSwitch_GPIO_Config(void);
 void HSYNC_TIMER_Config(uint16_t pixelDmaStartOffset, uint16_t hsyncTimerPeriod, uint16_t hsyncSyncLength, enum e_videoSyncPolarity syncPolarity);
