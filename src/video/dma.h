@@ -11,4 +11,6 @@
 #define PIXELDMA_TIMER_CLOCK		RCC_APB2Periph_TIM8
 
 void RGB_GPIO_Config(void);
+void DACLOCK_GPIO_Config(void);
 void Pixel_DMA_Config(uint16_t pixelDmaLength, uint8_t pixelDmaTimerPeriod);
+

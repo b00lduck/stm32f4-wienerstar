@@ -22,6 +22,7 @@ uint8_t tram_fx[TEXTRAMSIZE] __attribute__ ((section (".ccmram")));
 void videoInit(void) {
 
 	RGB_GPIO_Config();
+	DACLOCK_GPIO_Config();
 	VideoSwitch_GPIO_Config();
 	HSYNC_GPIO_Config();
 	VSYNC_GPIO_Config();

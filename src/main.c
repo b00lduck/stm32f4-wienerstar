@@ -215,8 +215,8 @@ void EXTI0_IRQHandler(void) {
 			testOldSwitchToColorSize = videoInstance.switchToColorAtLineSize;
 
 			videoInstance.switchToColorAtLine[0] = 0;
-			videoInstance.switchToBwAtLine[0] = 202;
-			videoInstance.switchToColorAtLine[1] = 250;
+			videoInstance.switchToBwAtLine[0] = 203;
+			videoInstance.switchToColorAtLine[1] = 235;
 			videoInstance.switchToBwAtLineSize = 1;
 			videoInstance.switchToColorAtLineSize = 2;
 

@@ -104,6 +104,13 @@ void videoClearTextmem();
 #define VIDEO_PORT			GPIOE
 #define VIDEO_PORT_CLOCK	RCC_AHB1Periph_GPIOE
 
+#define DACLOCK_PORT		GPIOC
+#define DACLOCK_PORT_CLOCK	RCC_AHB1Periph_GPIOC
+#define DACLOCK_PIN			GPIO_Pin_7
+#define DACLOCK_PINSOURCE	GPIO_PinSource7
+#define DACLOCK_PIN_AF		GPIO_AF_TIM8
+
+
 extern uint8_t vram[VIDEORAMSIZE] __attribute__ ((section (".sram1")));
 extern char tram[TEXTRAMSIZE] __attribute__ ((section (".ccmram")));
 extern uint8_t tram_fx[TEXTRAMSIZE] __attribute__ ((section (".ccmram")));
