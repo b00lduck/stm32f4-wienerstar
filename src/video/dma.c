@@ -85,7 +85,7 @@ void Pixel_DMA_Config(uint16_t pixelDmaLength, uint8_t pixelDmaTimerPeriod) {
 	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
 	TIM_OCInitStructure.TIM_OutputNState = TIM_OutputNState_Disable;
-	TIM_OCInitStructure.TIM_Pulse = 15;
+	TIM_OCInitStructure.TIM_Pulse = 2;
 	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
 	TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIdleState_Reset;
     TIM_OC2Init(PIXELDMA_TIMER, &TIM_OCInitStructure);

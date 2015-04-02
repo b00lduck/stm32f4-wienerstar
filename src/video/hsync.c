@@ -39,7 +39,7 @@ void VideoSwitch_GPIO_Config(void) {
 	RCC_AHB1PeriphClockCmd(VIDEO_SWITCH_PORT_CLOCK, ENABLE);
 
 	// GPIO configuration
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
@@ -235,7 +235,6 @@ static inline void HsyncIsrTextMode(void) {
 
 }
 
-
 /**
  * HSYNC IRQ Handler
  *
@@ -257,13 +256,13 @@ void TIM1_CC_IRQHandler(void) {
 
 	for(uint8_t i=0; i < videoInstance.switchToBwAtLineSize; i++) {
 		if(videoInstance.current_y == videoInstance.switchToBwAtLine[i]) {
-			VIDEO_SWITCH_PORT->BSRRL = GPIO_Pin_0;
+			VIDEO_SWITCH_PORT->BSRRL = GPIO_Pin_1;
 		}
 	}
 
 	for(uint8_t i=0; i < videoInstance.switchToColorAtLineSize; i++) {
 		if(videoInstance.current_y == videoInstance.switchToColorAtLine[i]) {
-			VIDEO_SWITCH_PORT->BSRRH = GPIO_Pin_0;
+			VIDEO_SWITCH_PORT->BSRRH = GPIO_Pin_1;
 		}
 	}
 

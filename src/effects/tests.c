@@ -12,6 +12,14 @@
  */
 void drawTestGraphic(uint8_t *target) {
 
+//	blankScreen(target);
+
+	//drawSolid8(target, 0xff, 50, 0, 30, 240);
+
+	//drawSolid8(target, 0xff, 160, 0, 50, 240);
+
+	//return;
+
 	// top part of verticals
 	drawVerticalsNumLines(target,24);
 
