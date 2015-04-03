@@ -6,7 +6,7 @@
 //#define FFT_ENABLED
 
 // Enable this switch to display debug information about performance (FPS etc)
-//#define PERFORMANCE_METERING
+#define PERFORMANCE_METERING
 
 // Enable keyboard driver
 #define ENABLE_KEYBOARD
