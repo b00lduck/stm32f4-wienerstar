@@ -26,6 +26,7 @@
 
 #include "vecmath/vector.h"
 
+#include "scenes/introScene.h"
 #include "scenes/grafhardt.h"
 #include "scenes/grafhardtText.h"
 #include "scenes/plasmaScene.h"
@@ -114,7 +115,8 @@ static inline void drawScene(uint16_t timeGone) {
 	//	sceneGrafHardtUninit();
 	//	scenePlasmaDraw(timeGone);
 //	sceneLineCubeDraw(timeGone);
-	sceneWillyStarDraw(timeGone);
+//	sceneWillyStarDraw(timeGone);
+	sceneIntroDraw(timeGone);
 //	} else {
 //		scenePlasmaUninit();
 

@@ -7,6 +7,7 @@ SET IMG2H=CALL %DATADIR%\img2h.bat
 SET FONT2H=CALL %DATADIR%\font2h.bat
 SET CONVERT=%ROOTDIR%\tools\convert.exe
 SET IMAGECONVERT=java -jar %ROOTDIR%\tools\ImageConverter.jar
+SET IMAGECONVERTBW=java -jar %ROOTDIR%\tools\ImageConverterBW.jar
 SET COLORMAP=%DATADIR%\images\colormap_332.gif
 
 echo ===========================================================
@@ -62,7 +63,7 @@ echo =======================================================
 ECHO Converting fonts
 echo =======================================================
 CD %DATADIR%\fonts
-REM %FONT2H% xenon2 bmp
+%FONT2H% xenon2 bmp
 REM %FONT2H% blazingStar bmp
 REM %FONT2H% blazingStar2 bmp
 REM %FONT2H% bubsy bmp

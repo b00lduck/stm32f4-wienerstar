@@ -12,8 +12,6 @@
 #include "keyboard/keyboard.h"
 #include "keyboard/keyboardParser.h"
 
-
-
 extern struct t_fontInstance fontInstanceXenon;
 extern uint16_t frameCount;
 
