@@ -561,7 +561,6 @@
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_interpolate_q31.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_interpolate_q31.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dma.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dma.h" type="1"/>
     <File name="src/synths/modplayer/arptable.h" path="src/synths/modplayer/arptable.h" type="1"/>
-    <File name="src/scenes/starScene.c" path="src/scenes/starScene.c" type="1"/>
     <File name="src/effects/line.c" path="src/effects/line.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rcc.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rcc.h" type="1"/>
@@ -582,7 +581,6 @@
     <File name="src/effects/laserCircle.c" path="src/effects/laserCircle.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_pwr.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_pwr.h" type="1"/>
     <File name="src/soundengine" path="" type="2"/>
-    <File name="src/scenes/starScene.h" path="src/scenes/starScene.h" type="1"/>
     <File name="src/synths/modplayer/arptable.c" path="src/synths/modplayer/arptable.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_hash.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_hash.h" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h" type="1"/>
