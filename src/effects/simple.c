@@ -71,6 +71,17 @@ void drawVerticalLineDown(uint8_t *target, uint8_t c, uint16_t x, uint16_t y, ui
 
 }
 
+uint8_t colorDim[8][8] = {
+		{0,	0,	0,	0,	0,	0,	0,	0},
+		{0,	0,	0,	0,	1,	1,	1,	1},
+		{0,	0,	1,	1,	1,	1,	2,	2},
+		{0,	0,	1,	1,	2,	2,	3,	3},
+		{0,	1,	1,	2,	3,	3,	3,	4},
+		{0,	1,	2,	2,	3,	3,	4,	5},
+		{0,	1,	2,	3,	4,	4,	5,	6},
+		{0,	1,	2,	3,	4,	5,	6,	7}
+};
+
 /**
  * Draw a vertical line upwards
  */
