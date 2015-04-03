@@ -187,7 +187,8 @@ void modplayerTriggerOffset(uint8_t ch, uint8_t sample_id, uint16_t rate, uint16
 	modplayerResetChannelState(channelState);
 
 	if (rate > 0) {
-		channelState->triggered_rate = rate;
+		float factor = finetune[modplayerInstance.sampleheader[sample_id].finetune & 0x0f];
+		channelState->triggered_rate = (float)rate * factor;
 	}
 
 	if (sample_id != 255) {
