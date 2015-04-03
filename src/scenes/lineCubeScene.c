@@ -49,20 +49,22 @@ void sceneLineCubeInit() {
 	_lCupVector = vec3(0.0f, -1.0f, 0.0f);
 	_lCviewMatrix = mat4x4lookat(_lCeyePosition, _lCcenterPosition, _lCupVector);
 
-	_modelLineArray[0] = mglLine33f(-1.0, -1.0, -1.0,  1.0, -1.0, -1.0, 0x05);
-	_modelLineArray[1] = mglLine33f(-1.0, -1.0, -1.0, -1.0,  1.0, -1.0, 0x05);
-	_modelLineArray[2] = mglLine33f( 1.0, -1.0, -1.0,  1.0,  1.0, -1.0, 0x05);
-	_modelLineArray[3] = mglLine33f(-1.0,  1.0, -1.0,  1.0,  1.0, -1.0, 0x05);
+	gl_color color = mglColor(1.0, 1.0, 1.0);
 
-	_modelLineArray[4] = mglLine33f(-1.0, -1.0,  1.0,  1.0, -1.0,  1.0, 0x05);
-	_modelLineArray[5] = mglLine33f(-1.0, -1.0,  1.0, -1.0,  1.0,  1.0, 0x05);
-	_modelLineArray[6] = mglLine33f( 1.0, -1.0,  1.0,  1.0,  1.0,  1.0, 0x05);
-	_modelLineArray[7] = mglLine33f(-1.0,  1.0,  1.0,  1.0,  1.0,  1.0, 0x05);
+	_modelLineArray[0] = mglLine33f(-1.0, -1.0, -1.0,  1.0, -1.0, -1.0, color);
+	_modelLineArray[1] = mglLine33f(-1.0, -1.0, -1.0, -1.0,  1.0, -1.0, color);
+	_modelLineArray[2] = mglLine33f( 1.0, -1.0, -1.0,  1.0,  1.0, -1.0, color);
+	_modelLineArray[3] = mglLine33f(-1.0,  1.0, -1.0,  1.0,  1.0, -1.0, color);
 
-	_modelLineArray[8] = mglLine33f( -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 0x05);
-	_modelLineArray[9] = mglLine33f(  1.0, -1.0, -1.0,  1.0, -1.0, 1.0, 0x05);
-	_modelLineArray[10] = mglLine33f(-1.0,  1.0, -1.0, -1.0,  1.0, 1.0, 0x05);
-	_modelLineArray[11] = mglLine33f( 1.0,  1.0, -1.0,  1.0,  1.0, 1.0, 0x05);
+	_modelLineArray[4] = mglLine33f(-1.0, -1.0,  1.0,  1.0, -1.0,  1.0, color);
+	_modelLineArray[5] = mglLine33f(-1.0, -1.0,  1.0, -1.0,  1.0,  1.0, color);
+	_modelLineArray[6] = mglLine33f( 1.0, -1.0,  1.0,  1.0,  1.0,  1.0, color);
+	_modelLineArray[7] = mglLine33f(-1.0,  1.0,  1.0,  1.0,  1.0,  1.0, color);
+
+	_modelLineArray[8] = mglLine33f( -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, color);
+	_modelLineArray[9] = mglLine33f(  1.0, -1.0, -1.0,  1.0, -1.0, 1.0, color);
+	_modelLineArray[10] = mglLine33f(-1.0,  1.0, -1.0, -1.0,  1.0, 1.0, color);
+	_modelLineArray[11] = mglLine33f( 1.0,  1.0, -1.0,  1.0,  1.0, 1.0, color);
 
 	// init done
 	sceneLineCubeInited = 1;

@@ -51,9 +51,10 @@ void sceneWillyStarInit() {
 	_lCupVector = vec3(0.0f, -1.0f, 0.0f);
 	_lCviewMatrix = mat4x4lookat(_lCeyePosition, _lCcenterPosition,
 			_lCupVector);
+	gl_color color = mglColor(1.0, 1.0, 1.0);
 
 	// Kimme
-	_modelLineArray[0] = mglLine33f(0.0, 0.8, 0.0, 0.0, 0.9, 0.0, 0x05);
+	_modelLineArray[0] = mglLine33f(0.0, 0.8, 0.0, 0.0, 0.9, 0.0, color);
 
 	// Rechte Eichel
 //	_modelLineArray[1] = mglLine33f(0.0, 0.9, 0.0, 0.05, 0.9, 0.0, 0x05);
@@ -70,13 +71,13 @@ void sceneWillyStarInit() {
 //	_modelLineArray[10] = mglLine33f( -0.15,  0.85,  0.0,  -0.05,  0.9,   0.0,  0x05);
 //	_modelLineArray[11] = mglLine33f( -0.05,  0.9,   0.0,   0.0,   0.9,   0.0,  0x05);
 
-    _modelLineArray[12] = mglLine33f( -0.1,   0.6,   0.0,  -0.1,   0.13,   0.0,  0x05);
-    _modelLineArray[13] = mglLine33f(  0.1,   0.6,   0.0,   0.1,   0.13,   0.0,  0x05);
+    _modelLineArray[12] = mglLine33f( -0.1,   0.6,   0.0,  -0.1,   0.13,   0.0,  color);
+    _modelLineArray[13] = mglLine33f(  0.1,   0.6,   0.0,   0.1,   0.13,   0.0,  color);
 
-    _modelLineArray[14] = mglLine33f(  0.1,   0.4,   0.0,   0.2,   0.4,   0.0,  0x05);
-    _modelLineArray[15] = mglLine33f(  0.2,   0.4,   0.0,   0.3,   0.346, 0.0,  0x05);
+    _modelLineArray[14] = mglLine33f(  0.1,   0.4,   0.0,   0.2,   0.4,   0.0,  color);
+    _modelLineArray[15] = mglLine33f(  0.2,   0.4,   0.0,   0.3,   0.346, 0.0,  color);
 
-    _modelLineArray[16] = mglLineV3f(  _modelLineArray[15].pointB,   0.35,  0.24,   0.0,  0x05);
+    _modelLineArray[16] = mglLineV3f(  _modelLineArray[15].pointB,   0.35,  0.24,   0.0,  color);
 
 	sceneWillyStarInited = 1;
 	_isRotatingX = false;
