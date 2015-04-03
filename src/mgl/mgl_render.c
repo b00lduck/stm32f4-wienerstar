@@ -1,5 +1,8 @@
 //#pragma GCC optimize ("O0")
 
+// Zu Debug Zwecken (Zahlen an den Linien)
+//#define mgl_render_debug
+
 #include "mgl_render.h"
 #include "fixedFont.h"
 
@@ -46,14 +49,15 @@ void mglRenderLines(uint8_t* framebuffer, gl_line_t* lineArray,	uint32_t numLine
 
 
 		//drawLine(framebuffer, pixel_Ax, pixel_Ay, pixel_Bx, pixel_By, lineArray[i].color);
-		drawWuLine(framebuffer, pixel_Ax, pixel_Ay, pixel_Bx, pixel_By);
+		drawAlLine(framebuffer, pixel_Ax, pixel_Ay, pixel_Bx, pixel_By, lineArray[i].color);
 
+#ifdef mgl_render_debug
 		uint16_t coordXmid = ( pointA.point.x + pointB.point.x) * 0.5;
 		uint16_t coordYmid = ( pointA.point.y + pointB.point.y) * 0.5;
 		char sbuf[20];
 		sprintf((char*)&sbuf, "%d", i);
-
 		fixedFontDrawString(&fixedFontInstanceVga, framebuffer, sbuf , coordXmid, coordYmid);
+#endif
 	}
 
 }

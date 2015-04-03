@@ -33,6 +33,7 @@
 #include "scenes/laserScene.h"
 #include "scenes/explicitScene.h"
 #include "scenes/lineCubeScene.h"
+#include "scenes/willyStarScene.h"
 
 #include "video/vsync.h"
 #include "tools/itoa.h"
@@ -112,7 +113,8 @@ static inline void drawScene(uint16_t timeGone) {
 	//} else if(globalTime < 10000) {
 	//	sceneGrafHardtUninit();
 	//	scenePlasmaDraw(timeGone);
-	sceneLineCubeDraw(timeGone);
+//	sceneLineCubeDraw(timeGone);
+	sceneWillyStarDraw(timeGone);
 //	} else {
 //		scenePlasmaUninit();
 
