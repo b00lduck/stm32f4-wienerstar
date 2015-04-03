@@ -263,17 +263,6 @@ void drawWuLine (uint8_t *target, int16_t x0, int16_t y0, int16_t x1, int16_t y1
    *(target + x1 + y1 * videoInstance.resx) = COLOR(7,0,0);
 }
 
-uint8_t colorDim[8][8] = {
-		{0,	0,	0,	0,	0,	0,	0,	0},
-		{0,	0,	0,	0,	1,	1,	1,	1},
-		{0,	0,	1,	1,	1,	1,	2,	2},
-		{0,	0,	1,	1,	2,	2,	3,	3},
-		{0,	1,	1,	2,	3,	3,	3,	4},
-		{0,	1,	2,	2,	3,	3,	4,	5},
-		{0,	1,	2,	3,	4,	4,	5,	6},
-		{0,	1,	2,	3,	4,	5,	6,	7}
-};
-
 void drawWuLineColor (uint8_t *target, int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint8_t r, uint8_t g, uint8_t b) {
 
    uint8_t colorFull = COLOR(r,g,b);

@@ -1,5 +1,6 @@
 #pragma once
 #include "../video/video.h"
+#include "../macros.h"
 void blankScreen(uint8_t *target);
 void blankScreenColor(uint8_t *target, uint8_t c);
 
@@ -11,6 +12,8 @@ void drawSolid8(uint8_t *target, uint8_t c, uint16_t x, uint16_t y, uint8_t widt
 void drawVerticalLineDown(uint8_t *target, uint8_t c, uint16_t x, uint16_t y, uint16_t len);
 void drawVerticalLineUp(uint8_t *target, uint8_t c, uint16_t x, uint16_t y, uint16_t len);
 void drawVerticalLineSym(uint8_t *target, uint8_t c, uint16_t x, uint16_t y, uint16_t len);
+
+extern uint8_t colorDim[8][8];
 
 static inline void drawPixel(uint8_t *target, uint16_t x, uint16_t y, uint8_t c) {
 	*(target + x + (y * videoInstance.resx)) = c;
@@ -42,6 +45,21 @@ static inline void videoBlit(const uint16_t sx,
 	}
 
 }
+
+static inline void fadePixel(uint8_t *pixel, uint8_t fade) {
+
+	uint8_t r = *pixel & 0b00000111;
+	uint8_t g = (*pixel & 0b00111000) >> 3;
+	uint8_t b = *pixel >> 6;
+
+	r = colorDim[fade][r];
+	g = colorDim[fade][g];
+	b = colorDim[fade][b];
+
+	*pixel = COLOR(r,g,b);
+
+}
+
 
 /**
  * copies a box in the video mem with transparency

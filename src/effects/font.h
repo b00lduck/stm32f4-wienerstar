@@ -1,5 +1,5 @@
 #pragma once
-
+#include "../effects/simple.h"
 
 struct t_fontInstance {
 
@@ -97,6 +97,35 @@ static inline uint8_t fontRenderChar(struct t_fontInstance *fontInstance, uint8_
 }
 
 /**
+ * copy char into vidmem
+ */
+static inline uint8_t fontRenderCharFaded(struct t_fontInstance *fontInstance, uint8_t *target, uint8_t c, uint16_t x, uint16_t y, uint8_t fade) {
+
+	uint16_t cx,cy;
+
+	c -= 33;
+
+	uint8_t width = fontInstance->charWidth[c];
+
+	for(cy = 1; cy < fontInstance->charHeight; cy++) {
+		for(cx = 0; cx < width; cx++) {
+			uint8_t pixel = *(fontInstance->fontData + (cy * fontInstance->mapWidth) + cx + fontInstance->charOffset[c]);
+
+			if (pixel != 0) {
+				fadePixel(&pixel, fade);
+				uint32_t offset = ((y+cy) * videoInstance.resx) + x + cx;
+				*(target + offset) = pixel;
+			}
+		}
+	}
+
+	return width;
+}
+
+
+
+
+/**
  * copy single vertical line (one pixel column) of char into video memory
  *
  * @param columnId
@@ -140,6 +169,25 @@ static inline void fontRenderText(struct t_fontInstance *fontInstance, uint8_t *
 			x += 16;
 		} else {
 			x += fontRenderChar(fontInstance,target,c,x,y);
+		}
+
+		if (x >= videoInstance.resx) return;
+
+	}
+}
+
+/**
+ * renders a text into the vidmem
+ */
+static inline void fontRenderTextFaded(struct t_fontInstance *fontInstance, uint8_t *target,  char* text, uint16_t x, uint16_t y, uint8_t fade) {
+	uint8_t c;
+
+	while((c = *(text++))) {
+
+		if (c < 33) {
+			x += 16;
+		} else {
+			x += fontRenderCharFaded(fontInstance,target,c,x,y,fade);
 		}
 
 		if (x >= videoInstance.resx) return;
