@@ -130,7 +130,6 @@
     <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_shift_q15.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_shift_q15.c" type="1"/>
     <File name="data/music/xm" path="" type="2"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_iir_lattice_f32.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_iir_lattice_f32.c" type="1"/>
-    <File name="data/music/mod/tellit.mod" path="data/music/mod/tellit.mod" type="1"/>
     <File name="src/effects/simple.c" path="src/effects/simple.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/SupportFunctions/arm_q7_to_float.c" path="src/system/cmsis/DSP_Lib/SupportFunctions/arm_q7_to_float.c" type="1"/>
     <File name="src/vecmath/vector.h" path="src/vecmath/vector.h" type="1"/>
@@ -145,11 +144,11 @@
     <File name="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_add_q15.c" path="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_add_q15.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FastMathFunctions/arm_sin_f32.c" path="src/system/cmsis/DSP_Lib/FastMathFunctions/arm_sin_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_correlate_f32.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_correlate_f32.c" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/ControllerFunctions/arm_pid_init_q15.c" path="src/system/cmsis/DSP_Lib/ControllerFunctions/arm_pid_init_q15.c" type="1"/>
     <File name="src/effects" path="" type="2"/>
+    <File name="src/system/cmsis/DSP_Lib/ControllerFunctions/arm_pid_init_q15.c" path="src/system/cmsis/DSP_Lib/ControllerFunctions/arm_pid_init_q15.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_add_f32.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_add_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/TransformFunctions" path="" type="2"/>
+    <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_add_f32.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_add_f32.c" type="1"/>
     <File name="src/effects/simple.h" path="src/effects/simple.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_fast_q31.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_fast_q31.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_q31.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_q31.c" type="1"/>
@@ -168,8 +167,8 @@
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_correlate_opt_q7.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_correlate_opt_q7.c" type="1"/>
     <File name="src/video/hsync.h" path="src/video/hsync.h" type="1"/>
     <File name="src/effects/scroller.h" path="src/effects/scroller.h" type="1"/>
-    <File name="src/system/cmsis" path="" type="2"/>
     <File name="src/scenes/laserScene.h" path="src/scenes/laserScene.h" type="1"/>
+    <File name="src/system/cmsis" path="" type="2"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.c" type="1"/>
     <File name="src/scenes/plasmaScene.h" path="src/scenes/plasmaScene.h" type="1"/>
     <File name="data/fonts/font_ascii_vga.h" path="data/fonts/font_ascii_vga.h" type="1"/>
@@ -215,8 +214,6 @@
     <File name="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_std_q15.c" path="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_std_q15.c" type="1"/>
     <File name="data/fonts/font_ascii_cga.h" path="data/fonts/font_ascii_cga.h" type="1"/>
     <File name="data/music/xm/hybridsong.xm" path="data/music/xm/hybridsong.xm" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_mult_q15.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_mult_q15.c" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_init_q15.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_init_q15.c" type="1"/>
     <File name="src/effects/analyzer.h" path="src/effects/analyzer.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FastMathFunctions/arm_cos_q15.c" path="src/system/cmsis/DSP_Lib/FastMathFunctions/arm_cos_q15.c" type="1"/>
     <File name="src/tools/strtof.c" path="src/tools/strtof.c" type="1"/>
@@ -226,15 +223,13 @@
     <File name="src/mgl/mgl_globals.h" path="src/mgl/mgl_globals.h" type="1"/>
     <File name="src/system/stm32f4xx_it.h" path="src/system/stm32f4xx_it.h" type="1"/>
     <File name="src/scenes/pointCube.c" path="src/scenes/pointCube.c" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c" type="1"/>
+    <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_add_q7.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_add_q7.c" type="1"/>
     <File name="data/music/mod/music_pianoplk.h" path="data/music/mod/music_pianoplk.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_f32.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_cmplx_mult_f32.c" path="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_cmplx_mult_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_power_q31.c" path="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_power_q31.c" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_sub_q7.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_sub_q7.c" type="1"/>
-    <File name="src/tools/itoa.h" path="src/tools/itoa.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/TransformFunctions/arm_dct4_init_f32.c" path="src/system/cmsis/DSP_Lib/TransformFunctions/arm_dct4_init_f32.c" type="1"/>
     <File name="src/effects/fftAnalyzer.h" path="src/effects/fftAnalyzer.h" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.c" type="1"/>
@@ -285,6 +280,7 @@
     <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_scale_q15.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_scale_q15.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_scale_f32.c" path="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_scale_f32.c" type="1"/>
     <File name="src/system/cmsis/core_cm4_simd.h" path="src/system/cmsis/core_cm4_simd.h" type="1"/>
+    <File name="data/music/mod/music_mikrofon.h" path="data/music/mod/music_mikrofon.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/TransformFunctions/arm_dct4_q15.c" path="src/system/cmsis/DSP_Lib/TransformFunctions/arm_dct4_q15.c" type="1"/>
     <File name="src/tools/isspace.h" path="src/tools/isspace.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/ControllerFunctions/arm_pid_reset_q15.c" path="src/system/cmsis/DSP_Lib/ControllerFunctions/arm_pid_reset_q15.c" type="1"/>
@@ -322,8 +318,6 @@
     <File name="src/synths/xmplayer/xmplayer.h" path="src/synths/xmplayer/xmplayer.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_mult_f32.c" path="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_mult_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_conv_partial_fast_q15.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_conv_partial_fast_q15.c" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/SupportFunctions/arm_fill_q31.c" path="src/system/cmsis/DSP_Lib/SupportFunctions/arm_fill_q31.c" type="1"/>
-    <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rng.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rng.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_lms_norm_init_f32.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_lms_norm_init_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/ComplexMathFunctions/arm_cmplx_dot_prod_f32.c" path="src/system/cmsis/DSP_Lib/ComplexMathFunctions/arm_cmplx_dot_prod_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/ControllerFunctions/arm_pid_reset_f32.c" path="src/system/cmsis/DSP_Lib/ControllerFunctions/arm_pid_reset_f32.c" type="1"/>
@@ -364,12 +358,7 @@
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df2T_f32.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df2T_f32.c" type="1"/>
     <File name="data/images/sprites/img32x32_ball.h" path="data/images/sprites/img32x32_ball.h" type="1"/>
     <File name="src" path="" type="2"/>
-    <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_init_f32.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_init_f32.c" type="1"/>
-    <File name="data/music/mod/test.mod" path="data/music/mod/test.mod" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/TransformFunctions/arm_dct4_init_q31.c" path="src/system/cmsis/DSP_Lib/TransformFunctions/arm_dct4_init_q31.c" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_negate_f32.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_negate_f32.c" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/ComplexMathFunctions/arm_cmplx_mag_f32.c" path="src/system/cmsis/DSP_Lib/ComplexMathFunctions/arm_cmplx_mag_f32.c" type="1"/>
-    <File name="data/music/mod/AXELF.MOD" path="data/music/mod/AXELF.MOD" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_var_f32.c" path="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_var_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_max_f32.c" path="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_max_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_negate_q15.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_negate_q15.c" type="1"/>
@@ -413,22 +402,20 @@
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_sdio.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_sdio.h" type="1"/>
     <File name="src/scenes/grafhardt.c" path="src/scenes/grafhardt.c" type="1"/>
     <File name="src/mgl" path="" type="2"/>
-    <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_q31.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_q31.c" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_mult_q7.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_mult_q7.c" type="1"/>
-    <File name="src/system/STM32F4xx_StdPeriph_Driver/inc" path="" type="2"/>
-    <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_lattice_init_q15.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_lattice_init_q15.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_sub_q31.c" path="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_sub_q31.c" type="1"/>
+    <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_mult_q7.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_mult_q7.c" type="1"/>
+    <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_lattice_init_q15.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_lattice_init_q15.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c" type="1"/>
     <File name="src/video/video.h" path="src/video/video.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/SupportFunctions/arm_float_to_q15.c" path="src/system/cmsis/DSP_Lib/SupportFunctions/arm_float_to_q15.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_conv_partial_opt_q7.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_conv_partial_opt_q7.c" type="1"/>
     <File name="src/config.h" path="src/config.h" type="1"/>
-    <File name="data/music/mod/Lotus2.mod" path="data/music/mod/Lotus2.mod" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_init_q15.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_init_q15.c" type="1"/>
     <File name="src/video/vsync.h" path="src/video/vsync.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_fast_q15.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_biquad_cascade_df1_fast_q15.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_decimate_fast_q31.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_decimate_fast_q31.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_max_q31.c" path="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_max_q31.c" type="1"/>
+    <File name="src/system/STM32F4xx_StdPeriph_Driver/src" path="" type="2"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/src" path="" type="2"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_des.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_des.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h" type="1"/>
@@ -436,7 +423,7 @@
     <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_offset_q7.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_offset_q7.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_fast_q15.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_fast_q15.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_add_q31.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_add_q31.c" type="1"/>
-    <File name="data/music/mod/MIG.MOD" path="data/music/mod/MIG.MOD" type="1"/>
+    <File name="data/music/mod/music_mig.h" path="data/music/mod/music_mig.h" type="1"/>
     <File name="data/music/mod/music_mig.h" path="data/music/mod/music_mig.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/TransformFunctions/arm_cfft_radix4_init_f32.c" path="src/system/cmsis/DSP_Lib/TransformFunctions/arm_cfft_radix4_init_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_sparse_init_f32.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_sparse_init_f32.c" type="1"/>
@@ -459,7 +446,6 @@
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_lms_init_f32.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_lms_init_f32.c" type="1"/>
     <File name="src/system" path="" type="2"/>
     <File name="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_var_q31.c" path="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_var_q31.c" type="1"/>
-    <File name="data/music/mod/time-trap.mod" path="data/music/mod/time-trap.mod" type="1"/>
     <File name="src/scenes/simples.h" path="src/scenes/simples.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_decimate_fast_q15.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_decimate_fast_q15.c" type="1"/>
     <File name="src/vecmath/quaternion.h" path="src/vecmath/quaternion.h" type="1"/>
@@ -569,8 +555,8 @@
     <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rcc.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rcc.h" type="1"/>
     <File name="src/system/discovery/stm32f4_discovery.h" path="src/system/discovery/stm32f4_discovery.h" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/SupportFunctions" path="" type="2"/>
     <File name="src/system/cmsis/DSP_Lib" path="" type="2"/>
+    <File name="src/system/cmsis/DSP_Lib/SupportFunctions" path="" type="2"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_iwdg.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_iwdg.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_max_q15.c" path="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_max_q15.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/TransformFunctions/arm_rfft_fast_f32.c" path="src/system/cmsis/DSP_Lib/TransformFunctions/arm_rfft_fast_f32.c" type="1"/>
@@ -585,11 +571,10 @@
     <File name="src/effects/laserCircle.c" path="src/effects/laserCircle.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_pwr.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_pwr.h" type="1"/>
     <File name="src/soundengine" path="" type="2"/>
-    <File name="data/music/mod/AreYouExcited.mod" path="data/music/mod/AreYouExcited.mod" type="1"/>
     <File name="src/synths/modplayer/arptable.c" path="src/synths/modplayer/arptable.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_hash.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_hash.h" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/SupportFunctions/arm_q7_to_q31.c" path="src/system/cmsis/DSP_Lib/SupportFunctions/arm_q7_to_q31.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h" type="1"/>
+    <File name="src/system/cmsis/DSP_Lib/SupportFunctions/arm_q7_to_q31.c" path="src/system/cmsis/DSP_Lib/SupportFunctions/arm_q7_to_q31.c" type="1"/>
     <File name="src/tools/log10.c" path="src/tools/log10.c" type="1"/>
     <File name="data/images/320x200/image_duck.h" path="data/images/320x200/image_duck.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_sub_q31.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_sub_q31.c" type="1"/>
@@ -605,17 +590,15 @@
     <File name="src/system/cmsis/DSP_Lib/ComplexMathFunctions/arm_cmplx_conj_f32.c" path="src/system/cmsis/DSP_Lib/ComplexMathFunctions/arm_cmplx_conj_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/ComplexMathFunctions/arm_cmplx_mag_q31.c" path="src/system/cmsis/DSP_Lib/ComplexMathFunctions/arm_cmplx_mag_q31.c" type="1"/>
     <File name="src/keyboard/keyboard.h" path="src/keyboard/keyboard.h" type="1"/>
-    <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_conv_opt_q7.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_conv_opt_q7.c" type="1"/>
-    <File name="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_mean_f32.c" path="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_mean_f32.c" type="1"/>
+    <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c" type="1"/>
     <File name="data/images/sprites/img40x40_badge.h" path="data/images/sprites/img40x40_badge.h" type="1"/>
+    <File name="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_mean_f32.c" path="src/system/cmsis/DSP_Lib/StatisticsFunctions/arm_mean_f32.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_add_q31.c" path="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_add_q31.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_decimate_q31.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_fir_decimate_q31.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_init_f32.c" path="src/system/cmsis/DSP_Lib/MatrixFunctions/arm_mat_init_f32.c" type="1"/>
     <File name="src/effects/line.h" path="src/effects/line.h" type="1"/>
-    <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_spi.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_spi.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FastMathFunctions/arm_sin_q15.c" path="src/system/cmsis/DSP_Lib/FastMathFunctions/arm_sin_q15.c" type="1"/>
-    <File name="src/synths/softsynth/softsynth.c" path="src/synths/softsynth/softsynth.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_offset_q15.c" path="src/system/cmsis/DSP_Lib/BasicMathFunctions/arm_offset_q15.c" type="1"/>
   </Files>
   <Bookmarks/>

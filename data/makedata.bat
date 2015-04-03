@@ -1,4 +1,5 @@
 @ECHO OFF
+d:
 SET ROOTDIR=%1
 SET DATADIR=%ROOTDIR%\data
 SET BIN2H=%ROOTDIR%\tools\bin2h.exe
@@ -23,7 +24,7 @@ echo ===========================================================
 echo =======================================================
 ECHO Converting MOD-files...
 echo =======================================================
-CD %DATADIR%\music\mod
+cd %DATADIR%\music\mod
 REM %BIN2H% MIG.MOD music > music_mig.h
 REM %BIN2H% AreYouExcited.MOD music > music_excited.h
 REM %BIN2H% AXELF.MOD music > music_axelf.h
@@ -32,7 +33,7 @@ REM %BIN2H% tellit.mod music > music_tellit.h
 REM %BIN2H% time-trap.mod music > music_timetrap.h
 REM %BIN2H% test.mod music > music_test.h
 REM %BIN2H% lotus2.mod music > music_lotus2.h
-%BIN2H% mikrofon4ch.mod music > mikrofon4ch.h
+%BIN2H% mikrofon.mod music > music_mikrofon.h
 
 
 echo =======================================================

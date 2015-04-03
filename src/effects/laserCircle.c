@@ -12,13 +12,15 @@ void initLaserCircle(struct laserCircleInstance_t *instance, uint16_t x, uint16_
 	for(int i=0; i<16; i++) {
 		uint8_t r1 = xorshift32() >> (26 + scaleDown);
 		uint8_t r2 = xorshift32() >> (26 + scaleDown);
-		uint8_t c = xorshift32() >> 24;
+		uint8_t r = xorshift32() >> 29;
+		uint8_t g = xorshift32() >> 29;
+		uint8_t b = xorshift32() >> 30;
 		uint8_t start = xorshift32() >> 23;
 		float speed = (((float)(xorshift32() >> 16)) - 32768) / 65000.0f;
 		uint16_t modFreqDiv = xorshift32() >> 27;
 		float modAmp = ((float)(xorshift32() >> 16)) / 50000.0f;
 		modAmp -= 0.5;
-		addLaserCircleSymmetric(instance, r1, r2, start, c, speed, modFreqDiv, modAmp);
+		addLaserCircleSymmetric(instance, r1, r2, start, r, g, b, speed, modFreqDiv, modAmp);
 	}
 
 }
@@ -62,22 +64,24 @@ void drawLaserCircle(struct laserCircleInstance_t *instance, uint8_t *target) {
 		int16_t x2 = instance->laserLines[i].x2 + (instance->size >> 1);
 		int16_t y1 = instance->laserLines[i].y1 + (instance->size >> 1);
 		int16_t y2 = instance->laserLines[i].y2 + (instance->size >> 1);
-		drawLine(target, x1, y1, x2, y2, instance->laserLines[i].color);
+		drawWuLineColor(target, x1, y1, x2, y2, instance->laserLines[i].r, instance->laserLines[i].g, instance->laserLines[i].b);
 	}
 }
 
-void addLaserCircle(struct laserCircleInstance_t *instance, uint8_t r1, uint8_t r2, float rot, uint8_t col, float spd, int16_t modFreqDiv, float modAmp) {
+void addLaserCircle(struct laserCircleInstance_t *instance, uint8_t r1, uint8_t r2, float rot, uint8_t r, uint8_t g, uint8_t b, float spd, int16_t modFreqDiv, float modAmp) {
 	instance->laserLines[instance->currentLaserLine].radius1 = r1;
 	instance->laserLines[instance->currentLaserLine].radius2 = r2;
 	instance->laserLines[instance->currentLaserLine].rotation = rot;
-	instance->laserLines[instance->currentLaserLine].color = col;
+	instance->laserLines[instance->currentLaserLine].r = r;
+	instance->laserLines[instance->currentLaserLine].g = g;
+	instance->laserLines[instance->currentLaserLine].b = b;
 	instance->laserLines[instance->currentLaserLine].speed = spd;
 	instance->laserLines[instance->currentLaserLine].modulationFreqDiv = modFreqDiv;
 	instance->laserLines[instance->currentLaserLine].modulationAmp = modAmp;
 	instance->currentLaserLine++;
 };
 
-void addLaserCircleSymmetric(struct laserCircleInstance_t *instance, uint8_t r1, uint8_t r2, float rot, uint8_t col, float spd, int16_t modFreqDiv, float modAmp) {
-	addLaserCircle(instance, r1, r2, rot, col, spd, modFreqDiv, modAmp);
-	addLaserCircle(instance, r1, r2, rot + 256, col, spd, modFreqDiv, modAmp);
+void addLaserCircleSymmetric(struct laserCircleInstance_t *instance, uint8_t r1, uint8_t r2, float rot, uint8_t r, uint8_t g, uint8_t b, float spd, int16_t modFreqDiv, float modAmp) {
+	addLaserCircle(instance, r1, r2, rot, r, g, b, spd, modFreqDiv, modAmp);
+	addLaserCircle(instance, r1, r2, rot + 256, r, g, b, spd, modFreqDiv, modAmp);
 };

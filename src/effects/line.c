@@ -263,3 +263,118 @@ void drawWuLine (uint8_t *target, int16_t x0, int16_t y0, int16_t x1, int16_t y1
    *(target + x1 + y1 * videoInstance.resx) = COLOR(7,0,0);
 }
 
+uint8_t colorDim[8][8] = {
+		{0,	0,	0,	0,	0,	0,	0,	0},
+		{0,	0,	0,	0,	1,	1,	1,	1},
+		{0,	0,	1,	1,	1,	1,	2,	2},
+		{0,	0,	1,	1,	2,	2,	3,	3},
+		{0,	1,	1,	2,	3,	3,	3,	4},
+		{0,	1,	2,	2,	3,	3,	4,	5},
+		{0,	1,	2,	3,	4,	4,	5,	6},
+		{0,	1,	2,	3,	4,	5,	6,	7}
+};
+
+void drawWuLineColor (uint8_t *target, int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint8_t r, uint8_t g, uint8_t b) {
+
+   uint8_t colorFull = COLOR(r,g,b);
+
+   uint16_t errorAdj, errorAcc;
+   uint16_t errorAccTemp, weighting;
+   int16_t dx, dy, temp, xDir;
+
+   if (y0 > y1) {
+      temp = y0; y0 = y1; y1 = temp;
+      temp = x0; x0 = x1; x1 = temp;
+   }
+
+   *(target + x0 + y0 * videoInstance.resx) = colorFull;
+
+   if ((dx = x1 - x0) >= 0) {
+      xDir = 1;
+   } else {
+      xDir = -1;
+      dx = -dx;
+   }
+
+   // Horizontal line
+   if ((dy = y1 - y0) == 0) {
+      while (dx-- != 0) {
+         x0 += xDir;
+         *(target + x0 + y0 * videoInstance.resx) = colorFull;
+      }
+      return;
+   }
+
+   // Vertical line
+   if (dx == 0) {
+      do {
+         y0++;
+         *(target + x0 + y0 * videoInstance.resx) = colorFull;
+      } while (--dy != 0);
+      return;
+   }
+
+   // Diagonal line
+   if (dx == dy) {
+      do {
+         x0 += xDir;
+         y0++;
+         *(target + x0 + y0 * videoInstance.resx) = colorFull;
+      } while (--dy != 0);
+      return;
+   }
+
+   // Line is not horizontal, diagonal, or vertical
+   errorAcc = 0;
+
+   if (dy > dx) {
+      errorAdj = ((uint32_t) dx << 16) / (uint32_t) dy;
+      while (--dy) {
+         errorAccTemp = errorAcc;
+         errorAcc += errorAdj;
+         if (errorAcc <= errorAccTemp) {
+            x0 += xDir;
+         }
+         y0++;
+         weighting = errorAcc >> INTENTSITY_SHIFT;
+
+         *(target + x0 + y0 * videoInstance.resx) = COLOR(
+        		 colorDim[NUM_LEVELS - weighting][r],
+        		 colorDim[NUM_LEVELS - weighting][g],
+        		 colorDim[NUM_LEVELS - weighting][b]);
+         *(target + x0 + xDir + y0 * videoInstance.resx) = COLOR(
+        		 colorDim[weighting][r],
+        		 colorDim[weighting][g],
+        		 colorDim[weighting][b]);
+
+      }
+      *(target + x1 + y1 * videoInstance.resx) = colorFull;
+      return;
+   }
+
+   errorAdj = ((uint32_t) dy << 16) / (uint32_t) dx;
+
+   while (--dx) {
+      errorAccTemp = errorAcc;
+      errorAcc += errorAdj;
+      if (errorAcc <= errorAccTemp) {
+         y0++;
+      }
+      x0 += xDir;
+      weighting = errorAcc >> INTENTSITY_SHIFT;
+
+      *(target + x0 + y0 * videoInstance.resx) = COLOR(
+     		 colorDim[NUM_LEVELS - weighting][r],
+     		 colorDim[NUM_LEVELS - weighting][g],
+     		 colorDim[NUM_LEVELS - weighting][b]);
+      *(target + x0 + ((y0 + 1) * videoInstance.resx)) = COLOR(
+     		 colorDim[weighting][r],
+     		 colorDim[weighting][g],
+     		 colorDim[weighting][b]);
+
+   }
+
+   *(target + x1 + y1 * videoInstance.resx) = colorFull;
+}
+
+
