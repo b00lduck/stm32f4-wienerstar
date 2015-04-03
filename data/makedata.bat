@@ -63,7 +63,7 @@ echo =======================================================
 ECHO Converting fonts
 echo =======================================================
 CD %DATADIR%\fonts
-%FONT2H% xenon2 bmp
+REM %FONT2H% xenon2 bmp
 REM %FONT2H% blazingStar bmp
 REM %FONT2H% blazingStar2 bmp
 REM %FONT2H% bubsy bmp
