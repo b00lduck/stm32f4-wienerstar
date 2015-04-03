@@ -30,7 +30,6 @@ void sceneLaserUninit() {
 	sceneLaserInited = 0;
 }
 
-
 void sceneLaserDraw(uint16_t timeGone, enum laserSceneVariant variant) {
 
 	if ((!sceneLaserInited) || (variant != sceneLaserVariantInited)) {
@@ -38,7 +37,7 @@ void sceneLaserDraw(uint16_t timeGone, enum laserSceneVariant variant) {
 	}
 
 	blankScreenColor(videoInstance.vramTarget, 0);
-	blobBlitTransparent((const uint8_t*) img40x40_badge, 0, 0, 0, 0, 40, 40);
+	blobBlitTransparent((const uint8_t*) img40x40_badge, 0, 0, 1, 0, 40, 40);
 
 	sceneLaserClock += timeGone;
 	calcAllLaserCircles(timeGone, sceneLaserClock);
@@ -118,5 +117,3 @@ void ballInvert32(uint8_t *target) {
 		trg += 72;
 	}
 }
-
-

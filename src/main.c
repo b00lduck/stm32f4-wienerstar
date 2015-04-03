@@ -108,19 +108,19 @@ static inline void drawScene(uint16_t timeGone) {
 	globalTime += timeGone;
 
 	//if (globalTime < 5000) {
-	//	sceneGrafHardtDraw(timeGone);
+	//sceneGrafHardtDraw(timeGone);
 	//} else if(globalTime < 10000) {
-	//	sceneGrafHardtUninit();
-	//	scenePlasmaDraw(timeGone);
-	sceneLineCubeDraw(timeGone);
+	//sceneGrafHardtUninit();
+	//scenePlasmaDraw(timeGone);
+	//sceneLineCubeDraw(timeGone);
 //	} else {
 //		scenePlasmaUninit();
 
-//		if (globalTime & 0b10000000) {
-//			sceneLaserDraw(timeGone, LSV_MIX1);
-//		} else {
-//			sceneLaserDraw(timeGone, LSV_FOUR_BY_THREE);
-//		}
+		//if (globalTime & 0b10000000) {
+		//	sceneLaserDraw(timeGone, LSV_MIX1);
+		//} else {
+			sceneLaserDraw(timeGone, LSV_FOUR_BY_THREE);
+		//}
 //	}
 
 

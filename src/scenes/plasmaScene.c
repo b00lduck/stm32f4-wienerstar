@@ -107,19 +107,9 @@ void scenePlasmaDraw(uint16_t timeGone) {
 
 	if (!scenePlasmaInited) scenePlasmaInit();
 
-	fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, "MASSERFAGGER ALLSTARS", 1, 0);
-
 	blankScreen(videoInstance.vramTarget);
 
-	//plasmaRender(videoInstance.vramTarget);
-
-	//drawWuLine(videoInstance.vramTarget, 20, 20, 100, 100);
-	drawWuLine(videoInstance.vramTarget, 20, 20, 50, 100);
-	//drawWuLine(videoInstance.vramTarget, 20, 20, 100, 50);
-	//drawWuLine(videoInstance.vramTarget, 20, 20, 100, 20);
-	//drawWuLine(videoInstance.vramTarget, 20, 20, 20, 100);
-
-	fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, "MASSERFAGGER ALLSTARS", 1, 0);
+	plasmaRender(videoInstance.vramTarget);
 
 	//scenePlasmaDuckDraw(timeGone);
 }

@@ -19,9 +19,7 @@ void sceneGrafHardtInit() {
 
 	videoMode(V280x400x8V);
 
-	//scrollerInit(&scrollerInstance, &fontInstanceXenon, "PUSH THE BLUE BUTTON TO SEE THE TESTBILD SHAZMAN... TEST TEST ONE TWO... BOOLDUCK PROUDLY ACCEPTS THE FUNKUCHEN VS CRAP CHALLENGE. ATTENTION. THIS IS AMIGAAAAAHHHH. I NEED RESISTORS. KRUMME OHMS AND SO ON.");
-	//scrollerInit(&scrollerInstance, &fontInstanceXenon, "B00LDUCK PROUDLY PRESENTS THE FUNKUCHEN VS. CRAP CHALLENGE. PUSH THE BLUE BUTTON TO SEE THE TESTBILD.");
-	scrollerInit(&scrollerInstance, &fontInstanceXenon, "WELCOME TO EVOKE 2014");
+	scrollerInit(&scrollerInstance, &fontInstanceXenon, "WELCOME TO REVISION 2015");
 
 	#ifdef FFT_ENABLED
 	fftAnalyzerCalc();
@@ -42,7 +40,7 @@ void sceneGrafHardtDraw(uint16_t timeGone) {
 
 	blankScreen(videoInstance.vramTarget);
 
-	showImage(videoInstance.vramTarget, img280x400_spacetits);
+	//showImage(videoInstance.vramTarget, img280x400_spacetits);
 
 	#ifdef MUSIC_ENABLED
 	  //analyzerRender(videoInstance.vramTarget);

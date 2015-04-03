@@ -3,7 +3,7 @@
 #define MUSIC_ENABLED
 
 // only makes sense with music enabled
-//#define FFT_ENABLED
+#define FFT_ENABLED
 
 // Enable this switch to display debug information about performance (FPS etc)
 #define PERFORMANCE_METERING
