@@ -43,13 +43,12 @@ void mglRenderLines(uint8_t* framebuffer, gl_line_t* lineArray,	uint32_t numLine
 		gl_vertex_t pointA = _transformAndPerspectiveDivide((gl_vertex_t) {lineArray[i].pointA, 0x05});
 		gl_vertex_t pointB = _transformAndPerspectiveDivide((gl_vertex_t) {lineArray[i].pointB, 0x05});
 
-		uint16_t pixel_Ax = (uint16_t) pointA.point.x;
-		uint16_t pixel_Ay = (uint16_t) pointA.point.y;
-		uint16_t pixel_Bx = (uint16_t) pointB.point.x;
-		uint16_t pixel_By = (uint16_t) pointB.point.y;
+		int16_t pixel_Ax = (int16_t) pointA.point.x;
+		int16_t pixel_Ay = (int16_t) pointA.point.y;
+		int16_t pixel_Bx = (int16_t) pointB.point.x;
+		int16_t pixel_By = (int16_t) pointB.point.y;
 
 
-		//drawLine(framebuffer, pixel_Ax, pixel_Ay, pixel_Bx, pixel_By, lineArray[i].color);
 		drawWuLineColor(framebuffer, pixel_Ax, pixel_Ay, pixel_Bx, pixel_By, lineArray[i].color.r, lineArray[i].color.g, lineArray[i].color.b);
 
 #ifdef mgl_render_debug

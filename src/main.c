@@ -115,8 +115,8 @@ static inline void drawScene(uint16_t timeGone) {
 	//	sceneGrafHardtUninit();
 	//	scenePlasmaDraw(timeGone);
 //	sceneLineCubeDraw(timeGone);
-//	sceneWillyStarDraw(timeGone);
-	sceneIntroDraw(timeGone);
+	sceneWillyStarDraw(timeGone);
+//	sceneIntroDraw(timeGone);
 //	} else {
 //		scenePlasmaUninit();
 
