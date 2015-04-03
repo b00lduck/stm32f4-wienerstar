@@ -74,8 +74,11 @@ static inline void paulaRender(const char* moduleData, struct t_paulaInstance* p
 	paulaProcchan(moduleData, paulaInstance, 2);
 	paulaProcchan(moduleData, paulaInstance, 3);
 
-	*left = paulaInstance->paulachannel[0].out + paulaInstance->paulachannel[3].out;
-	*right = paulaInstance->paulachannel[1].out + paulaInstance->paulachannel[2].out;
+	*left = paulaInstance->paulachannel[0].out
+			+ paulaInstance->paulachannel[3].out
+			+ paulaInstance->paulachannel[1].out
+			+ paulaInstance->paulachannel[2].out;
+	*right = *left;
 
 }
 #endif

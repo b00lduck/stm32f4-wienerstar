@@ -85,6 +85,8 @@ struct t_modplayerInstance {
 	uint8_t tick;
 
 	uint8_t arpindex;
+
+	uint8_t speed_bpm;
 };
 
 
@@ -96,7 +98,10 @@ static inline void musicGetSample(float *left, float *right) {
 
 	paulaRender(modplayerInstance.moduleData, &(modplayerInstance.paulaInstance), left, right);
 
-	if (modplayerInstance.samples_rendered_tick >= (SAMPLERATE / 50)) {
+	uint16_t samplesPerTick = (SAMPLERATE * 125 / 50) / 111;
+
+	// default tempo is 125bpm at 6ticks per row
+	if (modplayerInstance.samples_rendered_tick >= samplesPerTick) {
 		modplayerTick();
 		modplayerInstance.samples_rendered_tick = 0;
 	}

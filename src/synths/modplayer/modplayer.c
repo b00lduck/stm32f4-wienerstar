@@ -46,6 +46,7 @@ void modplayerInit() {
 	for(i=0;i<31;i++) modplayerInstance.sampleheader[i].vu = 0;
 	modplayerInstance.samples_rendered = 0;
 	modplayerInstance.samples_rendered_tick = 0;
+	modplayerInstance.speed_bpm = 111;
 	paulaInit(&(modplayerInstance.paulaInstance));
 }
 
@@ -173,7 +174,7 @@ void modplayerResetFx(struct t_modplayerChannelState *channelState) {
 /**
  * trigger sample on channel
  */
-void modplayerTrigger(uint8_t ch, uint8_t sample_id, uint16_t rate) {
+void modplayerTriggerOffset(uint8_t ch, uint8_t sample_id, uint16_t rate, uint16_t offset) {
 
 	struct t_paulaChannel *paulaChannel = &(modplayerInstance.paulaInstance.paulachannel[ch]);
 	struct t_modplayerChannelState *channelState = &(modplayerInstance.channelstate[ch]);
@@ -203,13 +204,36 @@ void modplayerTrigger(uint8_t ch, uint8_t sample_id, uint16_t rate) {
 	paulaChannel->loop_length = paulaChannel->loop_end - paulaChannel->loop_start;
 	paulaChannel->loop_enable = modplayerInstance.sampleheader[channelState->sample_id].loop;
 
-	paulaChannel->position = 0;
+	paulaChannel->position = offset;
 	paulaChannel->playing = 1;
 
 	channelState->rate_before_fx = channelState->triggered_rate;
 
 	paulaChannel->finalrate = channelState->triggered_rate;
 	paulaChannel->finalrate_reciproc = 1.0f / paulaChannel->finalrate;
+}
+
+/**
+ * trigger sample on channel with offset
+ */
+void modplayerTrigger(uint8_t ch, uint8_t sample_id, uint16_t rate) {
+	modplayerTriggerOffset(ch, sample_id, rate, 0);
+}
+
+/**
+ * untrigger sample on channel
+ */
+void modplayerUntrigger(uint8_t ch) {
+
+	struct t_paulaChannel *paulaChannel = &(modplayerInstance.paulaInstance.paulachannel[ch]);
+	struct t_modplayerChannelState *channelState = &(modplayerInstance.channelstate[ch]);
+
+	// reset channel state
+	modplayerResetChannelState(channelState);
+
+	paulaChannel->position = 0;
+	paulaChannel->playing = 0;
+
 }
 
 /**
@@ -246,7 +270,7 @@ void modplayerProcessRow() {
 		// trigger note if necessary
 		if ((sample_id > 0) || (rate > 0)) {
 			// 0x3 = slide to note, no retrigger
-			if (effectid != 0x3) {
+			if ((effectid != 0x3) && (effectid != 0x09)) {
 				modplayerTrigger(ch,sample_id - 1,rate & 0x0fff);
 			}
 		}
@@ -317,7 +341,7 @@ void modplayerProcessRow() {
 			//case 0x8: // unused
 
 			case 0x9: // sample offset
-				// TODO: implement sample offset
+				modplayerTriggerOffset(ch,sample_id - 1,rate & 0x0fff, effect_x * 4096 + effect_y * 256);
 				break;
 
 			case 0xa: // volume slide
@@ -397,9 +421,9 @@ void modplayerProcessRow() {
 						// TODO: implement
 						break;
 
-					//case 0xc: // Cut sample
-					//	// NOT SUPPORTED
-					//	break;
+					case 0xc: // Cut sample
+						modplayerUntrigger(ch);
+						break;
 
 					//case 0xd: //  Delay sample
 						// NOT SUPPORTED
@@ -420,7 +444,10 @@ void modplayerProcessRow() {
 			case 0xf: // set speed
 				modplayerResetFx(channelState);
 				if (effectdata <= 32) {
+					// set ticks per row
 					modplayerInstance.speed = effectdata;
+				} else {
+					// set BPM
 				}
 				break;
 

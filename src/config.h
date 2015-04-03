@@ -32,7 +32,7 @@
 
 #ifdef MUSIC_ENABLED
 
-	#define SAMPLERATE 22050
+	#define SAMPLERATE 32000
 	#define BUFFERSIZE 4096
 
 	#define SOUNDBUFFER_GRANULARITY 512
@@ -69,8 +69,8 @@
 	#define I2S_DIV 	9
 	#define I2S_ODD		1
 	#elif SAMPLERATE == 32000
-	#define PLLI2S_N   	213
-	#define PLLI2S_R   	2
+	#define PLLI2S_N   	460
+	#define PLLI2S_R   	4
 	#define I2S_DIV 	6
 	#define I2S_ODD		1
 	#elif SAMPLERATE == 44100
