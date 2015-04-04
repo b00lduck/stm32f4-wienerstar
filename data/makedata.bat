@@ -54,7 +54,7 @@ echo =======================================================
 ECHO Converting images 280x200
 echo =======================================================
 CD %DATADIR%\images\280x200
-REM %IMG2H% title png 280 200
+%IMG2H% title png 280 200
 
 echo =======================================================
 ECHO Converting sprites

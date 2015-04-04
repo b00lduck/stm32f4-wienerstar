@@ -19,7 +19,7 @@ void sceneGrafHardtInit() {
 
 	videoMode(V280x400x8V);
 
-	scrollerInit(&scrollerInstance, &fontInstanceXenon, "WELCOME TO REVISION 2015");
+	scrollerInit(&scrollerInstance, &fontInstanceXenon, "HELLO, REVISION 2015!");
 
 	#ifdef FFT_ENABLED
 	fftAnalyzerCalc();
