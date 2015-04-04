@@ -142,7 +142,7 @@ void sceneLineCubeInit() {
 	mglSetPerspectiveProjection(45.0f, (280.0f / 200.0f), 2.5, 20.0);
 
 // be careful as the positive Y-direction is DOWN here!
-	_lCeyePosition = vec3(2.0, 2.0f, 3.0f);
+	_lCeyePosition = vec3(2.0, 2.0f, 2.7f);
 	_lCcenterPosition = vec3(0.0f, 0.0f, 0.0f);
 	_lCupVector = vec3(0.0f, -1.0f, 0.0f);
 	_lCviewMatrix = mat4x4lookat(_lCeyePosition, _lCcenterPosition,
@@ -198,28 +198,28 @@ void setTimer() {
 	if (sceneLineCubeClock > timeOffset + 3700) {defineCubeCol(cube2, blue);}
 	if (sceneLineCubeClock > timeOffset + 3620) {defineCube(cube2);}
 
-	if (sceneLineCubeClock > timeOffset + 5000) {isRotate = true;}
-	if (sceneLineCubeClock > timeOffset + 9000) {defineCube(cube3);}
-	if (sceneLineCubeClock > timeOffset + 9002) {	}
-	if (sceneLineCubeClock > timeOffset + 11000) {defineCube(cube4);}
+	if (sceneLineCubeClock > timeOffset + 4000) {isRotate = true;}
+	if (sceneLineCubeClock > timeOffset + 6500) {_rotationOffset = 0.5f;}
+	if (sceneLineCubeClock > timeOffset + 6550) {_rotationOffset = 0.0f; }
+	if (sceneLineCubeClock > timeOffset + 6600) {_rotationOffset = 0.5f;}
+	if (sceneLineCubeClock > timeOffset + 6650) {_rotationOffset = 0.0f;}
+	if (sceneLineCubeClock > timeOffset + 6700) {_rotationOffset = 0.5f;}
+	if (sceneLineCubeClock > timeOffset + 6750) {_rotationOffset = 0.0f;}
+	if (sceneLineCubeClock > timeOffset + 6800) {_rotationOffset = 0.5f;}
+	if (sceneLineCubeClock > timeOffset + 6850) {_rotationOffset = 0.0f;}
+	if (sceneLineCubeClock > timeOffset + 6900) {_rotationOffset = 0.5f;}
+	if (sceneLineCubeClock > timeOffset + 6950) {_rotationOffset = 0.0f;}
+	if (sceneLineCubeClock > timeOffset + 8000) {defineCube(cube3);}
+	if (sceneLineCubeClock > timeOffset + 8002) {	}
+	if (sceneLineCubeClock > timeOffset + 10000) {defineCube(cube4);}
+	if (sceneLineCubeClock > timeOffset + 10002) {	}
+	if (sceneLineCubeClock > timeOffset + 11000) {defineCube(cube5);}
 	if (sceneLineCubeClock > timeOffset + 11002) {	}
-	if (sceneLineCubeClock > timeOffset + 12000) {defineCube(cube5);}
-	if (sceneLineCubeClock > timeOffset + 12002) {	}
-	if (sceneLineCubeClock > timeOffset + 12700) {defineCube(cube6);}
-	if (sceneLineCubeClock > timeOffset + 12702) {	}
-	if (sceneLineCubeClock > timeOffset + 13200) {defineCube(cube7);}
-	if (sceneLineCubeClock > timeOffset + 13202) {}
+	if (sceneLineCubeClock > timeOffset + 11700) {defineCube(cube6);}
+	if (sceneLineCubeClock > timeOffset + 11702) {	}
+	if (sceneLineCubeClock > timeOffset + 12200) {defineCube(cube7);}
+	if (sceneLineCubeClock > timeOffset + 12202) {}
 
-	if (sceneLineCubeClock > timeOffset + 7500) {_rotationOffset = 0.5f;}
-	if (sceneLineCubeClock > timeOffset + 7550) {_rotationOffset = 0.0f; }
-	if (sceneLineCubeClock > timeOffset + 7600) {_rotationOffset = 0.5f;}
-	if (sceneLineCubeClock > timeOffset + 7650) {_rotationOffset = 0.0f;}
-	if (sceneLineCubeClock > timeOffset + 7700) {_rotationOffset = 0.5f;}
-	if (sceneLineCubeClock > timeOffset + 7750) {_rotationOffset = 0.0f;}
-	if (sceneLineCubeClock > timeOffset + 7800) {_rotationOffset = 0.5f;}
-	if (sceneLineCubeClock > timeOffset + 7850) {_rotationOffset = 0.0f;}
-	if (sceneLineCubeClock > timeOffset + 7900) {_rotationOffset = 0.5f;}
-	if (sceneLineCubeClock > timeOffset + 7950) {_rotationOffset = 0.0f;}
 }
 void sceneLineCubeDraw(uint16_t timeGone) {
 

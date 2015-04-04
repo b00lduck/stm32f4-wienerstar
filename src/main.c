@@ -113,13 +113,13 @@ struct t_scene {
 #define NUMSCENES 9
 
 struct t_scene scenes[NUMSCENES] = {
-		{ .duration = 21000, .renderMethod = &sceneIntroDraw},
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 21000, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 300, .renderMethod = &sceneLineCubeDraw},
 		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
-		{ .duration = 10000, .renderMethod = &sceneWillyStarDraw},
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
-		{ .duration = 60000, .renderMethod = &sceneWillyStarDraw}
+		{ .duration = 300, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 300, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 60000, .renderMethod = &sceneLineCubeDraw}
 };
 
 volatile uint32_t globalTime = 0;
