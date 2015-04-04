@@ -331,11 +331,11 @@ void setCounter(uint16_t timeGone) {
 
 	}
 
-	_willyStarRotationZ += 0.063f;  //-------------------------
+	_willyStarRotationZ += 0.124f;  //-------------------------
 }
 
 void sceneWillyStarDraw(uint16_t timeGone) {
-	timeLocal += timeGone;
+//	timeLocal += timeGone;
 	if (!sceneWillyStarInited) {
 		sceneWillyStarInit();
 	}
