@@ -51,8 +51,8 @@ uint8_t testOldSwitchToBwSize;
 int16_t testOldSwitchToColor[MAX_SWITCHLIST_SIZE];
 uint8_t testOldSwitchToColorSize;
 
-uint16_t lastMsec = 0;
-uint16_t frameCount = 0;
+uint32_t lastMsec = 0;
+uint32_t frameCount = 0;
 
 /**
  * Cast (in order of appearance):
