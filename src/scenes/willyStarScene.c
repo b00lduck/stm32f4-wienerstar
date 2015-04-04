@@ -204,11 +204,11 @@ void sceneWillyStarCalc(float rotationZ, float rotationX) {
 	mglRenderLines(videoInstance.vramTarget, _modelLineArray, NUM_LINES);
 }
 
-//uint32_t willySceneClock = 0;
+uint32_t willySceneClock = 0;
 
 void setCounter(uint16_t timeGone) {
 
-//	willySceneClock += timeGone;
+	willySceneClock += timeGone;
 
 	// Scenen Counter
 	_CounterScene += 1;

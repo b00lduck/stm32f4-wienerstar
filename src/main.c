@@ -162,7 +162,7 @@ static inline void drawScene(uint16_t timeGone) {
 
 	volatile uint32_t tempTime = 0;
 
-	for (int i=0;i<NUMSCENES;i++) {2353
+	for (int i=0;i<NUMSCENES;i++) {
 		tempTime += scenes[i].duration;
 		if (tempTime > globalTime) {
 			scenes[i].renderMethod(timeGone);
