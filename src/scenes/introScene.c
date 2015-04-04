@@ -25,8 +25,8 @@ void sceneIntroUninit() {
 	sceneIntroInited = 0;
 }
 
-#define TIME_FONT(id) (2000 * (id+1) + 500 * id)
-#define TIME_PAUSE(id) (2000 * (id+1) + 500 * (id+1))
+#define TIME_FONT(id) (2000 * (id+1) + 500 * id) + 2000
+#define TIME_PAUSE(id) (2000 * (id+1) + 500 * (id+1)) + 2000
 
 void sceneIntroDraw(uint16_t timeGone) {
 
@@ -62,7 +62,7 @@ void sceneIntroDraw(uint16_t timeGone) {
 		// PAUSE
 	} else if (sceneIntroClock < TIME_FONT(4)) {
 		fontRenderText(&fontInstanceXenon, videoInstance.vramTarget, "APTLY NAMED...", 10, 130);
-	} else if (sceneIntroClock < TIME_PAUSE(3)) {
+	} else if (sceneIntroClock < TIME_PAUSE(4)) {
 		// PAUSE
 	} else {
 		showImage(videoInstance.vramTarget, img280x200_title);

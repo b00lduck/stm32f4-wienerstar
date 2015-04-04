@@ -70,9 +70,9 @@ uint32_t frameCount = 0;
  * - outro (blank): 5 sec
  */
 #define INTRO_SCENE_TIME 18
-#define PLASMA_SCENE_TIME INTRO_SCENE_TIME + 20
-#define CUBE_SCENE_TIME PLASMA_SCENE_TIME + 15
-#define LASER_SCENE_TIME CUBE_SCENE_TIME + 20
+#define CUBE_SCENE_TIME INTRO_SCENE_TIME + 20
+#define PLASMA_SCENE_TIME CUBE_SCENE_TIME + 15
+#define LASER_SCENE_TIME PLASMA_SCENE_TIME + 20
 #define FFT_SCENE_TIME LASER_SCENE_TIME + 25
 #define PIMML_SCENE_TIME FFT_SCENE_TIME + 30
 #define CREDITS_SCENE_TIME PIMML_SCENE_TIME + 25
@@ -121,13 +121,24 @@ void init() {
 
 }
 
-uint8_t padding[1000];
+struct t_scene {
+	uint16_t duration;
+    void (*renderMethod)(uint16_t);
+};
+
+#define NUMSCENES 7
+
+struct t_scene scenes[NUMSCENES] = {
+		{ .duration = 18000, .renderMethod = &sceneIntroDraw},
+		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 10000, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 10000, .renderMethod = &sceneLaserDraw2},
+		{ .duration = 20000, .renderMethod = &sceneWillyStarDraw},
+		{ .duration = 20000, .renderMethod = &sceneGrafHardtDraw}
+};
 
 volatile uint32_t globalTime = 0;
-
-uint32_t timeInSec(const uint32_t time) {
-	return (time / 1000);
-}
 
 /**
  * draw the scenes, switching them as we progress in time
@@ -135,29 +146,17 @@ uint32_t timeInSec(const uint32_t time) {
 static inline void drawScene(uint16_t timeGone) {
 
 	globalTime += timeGone;
-		sceneLineCubeDraw(timeGone);
-//
-//	if (timeInSec(globalTime) < INTRO_SCENE_TIME) {
-//		sceneIntroDraw(timeGone);
-//	} else if (timeInSec(globalTime) < PLASMA_SCENE_TIME) {
-//		//scenePlasmaDraw(timeGone);
-//	} else if (timeInSec(globalTime) < CUBE_SCENE_TIME) {
-//	} else if (timeInSec(globalTime) < LASER_SCENE_TIME) {
-//		sceneLaserDraw(timeGone, LSV_MIX1);
-//	} else if (timeInSec(globalTime) < FFT_SCENE_TIME) {
-//		sceneGrafHardtDraw(timeGone);
-//	} else if (timeInSec(globalTime) < PIMML_SCENE_TIME) {
-//		sceneWillyStarDraw(timeGone);
-//	} else if (timeInSec(globalTime) < CREDITS_SCENE_TIME) {
-//		// todo: credit scroller
-//	} else {
-//		// blank
-//	}
 
-	char sbuf[50];
-	sprintf((char*)&sbuf, "%d", (int) globalTime);
+	uint32_t tempTime = 0;
 
-	fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, sbuf, 1, videoInstance.resy - 32);
+	for (int i=0;i<NUMSCENES;i++) {
+		tempTime += scenes[i].duration;
+		if (tempTime > globalTime) {
+			scenes[i].renderMethod(timeGone);
+			return;
+		}
+		tempTime += scenes[i].duration;
+	}
 
 }
 
