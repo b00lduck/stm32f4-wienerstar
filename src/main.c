@@ -51,8 +51,8 @@ uint8_t testOldSwitchToBwSize;
 int16_t testOldSwitchToColor[MAX_SWITCHLIST_SIZE];
 uint8_t testOldSwitchToColorSize;
 
-uint16_t lastMsec = 0;
-uint16_t frameCount = 0;
+uint32_t lastMsec = 0;
+uint32_t frameCount = 0;
 
 /**
  * Cast (in order of appearance):
@@ -117,11 +117,11 @@ void init() {
 	audioInit();
 #endif
 
-	//sceneGrafhardtTextInit();
-	//sceneExplicitInit();
 }
 
-uint32_t globalTime = 0;
+uint8_t padding[1000];
+
+volatile uint32_t globalTime = 0;
 
 uint32_t timeInSec(const uint32_t time) {
 	return (time / 1000);
@@ -134,15 +134,11 @@ static inline void drawScene(uint16_t timeGone) {
 
 	globalTime += timeGone;
 
-	globalTime += timeGone;
+	if (timeInSec(globalTime) < INTRO_SCENE_TIME) {
 
-	if (timeInSec(globalTime < LOADER_TIME)) {
-		// todo: blank screen?
-	} else if (timeInSec(globalTime) < INTRO_SCENE_TIME) {
 		sceneIntroDraw(timeGone);
-
 	} else if (timeInSec(globalTime) < PLASMA_SCENE_TIME) {
-		scenePlasmaDraw(timeGone);
+		//scenePlasmaDraw(timeGone);
 
 	} else if (timeInSec(globalTime) < CUBE_SCENE_TIME) {
 		sceneLineCubeDraw(timeGone);
@@ -162,6 +158,12 @@ static inline void drawScene(uint16_t timeGone) {
 	} else {
 		// blank
 	}
+
+	char sbuf[50];
+	sprintf((char*)&sbuf, "%d", (int) globalTime);
+
+	fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, sbuf, 1, videoInstance.resy - 32);
+
 }
 
 /**
@@ -194,8 +196,8 @@ int main(void) {
 			// this happens at the end of the visible frame
 			if (videoInstance.vblank_flag || (videoInstance.vblank == 0)) {
 
-				uint32_t msec = videoInstance.current_frame * 16.6667
-						+ videoInstance.current_y * 0.03415;
+				uint32_t msec = videoInstance.current_frame * 16.6667;
+						//+ videoInstance.current_y * 0.03415;
 				uint32_t timeGone = msec - lastMsec;
 
 				// distinct test mode and regular mode
