@@ -16,4 +16,3 @@ extern struct t_fontInstance fontInstanceXenon;
 extern struct t_fontInstance fontInstanceBlazingStar;
 extern uint32_t frameCount;
 
-

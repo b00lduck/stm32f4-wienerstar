@@ -21,6 +21,8 @@
 #include "../data/fonts/font_xenon2.h"
 #include "../data/fonts/font_blazingStar.h"
 
+#include "data/images/sprites/img40x40_badge.h"
+
 #include "effects/fixedFont.h"
 #include "effects/tests.h"
 #include "effects/laserCircle.h"
@@ -55,28 +57,6 @@ uint8_t testOldSwitchToColorSize;
 
 uint32_t lastMsec = 0;
 uint32_t frameCount = 0;
-
-/**
- * Cast (in order of appearance):
- *
- * - loader (blank) : 5 sec
- * - intro : 20 sec
- * - plasma: 20 sec
- * - spinning cube: 15 sec
- * - laser circles: 20 sec
- * - fft / spectrum analyzer: 25 sec
- * - pimm'l star: 30 sec
- * - credits: 25 sec
- * - outro (blank): 5 sec
- */
-#define INTRO_SCENE_TIME 18
-#define CUBE_SCENE_TIME INTRO_SCENE_TIME + 20
-#define PLASMA_SCENE_TIME CUBE_SCENE_TIME + 15
-#define LASER_SCENE_TIME PLASMA_SCENE_TIME + 20
-#define FFT_SCENE_TIME LASER_SCENE_TIME + 25
-#define PIMML_SCENE_TIME FFT_SCENE_TIME + 30
-#define CREDITS_SCENE_TIME PIMML_SCENE_TIME + 25
-#define OUTRO_TIME CREDITS_SCENE_TIME + 5
 
 /**
  * initialize everything
@@ -126,16 +106,18 @@ struct t_scene {
     void (*renderMethod)(uint16_t);
 };
 
-#define NUMSCENES 7
+#define NUMSCENES 9
 
 struct t_scene scenes[NUMSCENES] = {
-		{ .duration = 18000, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 21000, .renderMethod = &sceneIntroDraw},
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
 		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 20000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 20000, .renderMethod = &sceneLineCubeDraw}
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 10000, .renderMethod = &sceneWillyStarDraw},
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 22000, .renderMethod = &sceneGrafHardtDraw},
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 40000, .renderMethod = &sceneWillyStarDraw}
 };
 
 volatile uint32_t globalTime = 0;
@@ -147,15 +129,17 @@ static inline void drawScene(uint16_t timeGone) {
 
 	globalTime += timeGone;
 
-	uint32_t tempTime = 0;
+	volatile uint32_t tempTime = 0;
 
 	for (int i=0;i<NUMSCENES;i++) {
 		tempTime += scenes[i].duration;
 		if (tempTime > globalTime) {
 			scenes[i].renderMethod(timeGone);
+			if (videoInstance.switchToBwAtLineSize == 0) {
+				blobBlitTransparent((const uint8_t*) img40x40_badge, 0, 0, 1, 0, 40, 40);
+			}
 			return;
 		}
-		tempTime += scenes[i].duration;
 	}
 
 }

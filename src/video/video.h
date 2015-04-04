@@ -82,9 +82,9 @@ struct t_videoInstance {
 	// callback for freerun mode
 	void (*freerunCallback)(uint16_t x, uint16_t y);
 
-	uint8_t switchToBwAtLine[MAX_SWITCHLIST_SIZE];
+	uint16_t switchToBwAtLine[MAX_SWITCHLIST_SIZE];
 	uint8_t switchToBwAtLineSize;
-	uint8_t switchToColorAtLine[MAX_SWITCHLIST_SIZE];
+	uint16_t switchToColorAtLine[MAX_SWITCHLIST_SIZE];
 	uint8_t switchToColorAtLineSize;
 
 

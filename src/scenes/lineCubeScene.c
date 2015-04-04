@@ -120,7 +120,12 @@ void sceneLineCubeInit() {
 	black = (gl_color) {0,0,0};
 	initCubes();
 
-	videoMode(V280x200x8D);
+	videoMode(V280x200x8VD);
+
+	videoInstance.switchToColorAtLine[0] = 0;
+	videoInstance.switchToBwAtLine[0] = 0;
+	videoInstance.switchToColorAtLineSize = 1;
+	videoInstance.switchToBwAtLineSize = 0;
 
 // ------------------- evaluation of GL ---------------------------------
 

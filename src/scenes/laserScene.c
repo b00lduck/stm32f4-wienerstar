@@ -3,7 +3,7 @@
 #include "effects/simple.h"
 #include "effects/laserCircle.h"
 #include "effects/fixedFont.h"
-#include "data/images/sprites/img40x40_badge.h"
+
 #include "data/images/sprites/img32x32_ball.h"
 
 uint8_t sceneLaserInited = 0;
@@ -16,7 +16,7 @@ uint8_t usedLasercircleInstances = 0;
 struct laserCircleInstance_t instance[MAX_NUM_LASERCIRCLE_INSTANCES];
 
 void sceneLaserInit(enum laserSceneVariant variant) {
-	videoMode(V320x240x8V);
+	videoMode(V280x200x8VD);
 	blankScreen(videoInstance.vramDisplay);
 	blankScreen(videoInstance.vramTarget);
 
@@ -24,6 +24,11 @@ void sceneLaserInit(enum laserSceneVariant variant) {
 
 	sceneLaserVariantInited = variant;
 	sceneLaserInited = 1;
+
+	videoInstance.switchToColorAtLine[0] = 0;
+	videoInstance.switchToBwAtLine[0] = 0;
+	videoInstance.switchToColorAtLineSize = 1;
+	videoInstance.switchToBwAtLineSize = 0;
 }
 
 void sceneLaserUninit() {
@@ -37,18 +42,20 @@ void sceneLaserDrawVar(uint16_t timeGone, enum laserSceneVariant variant) {
 	}
 
 	blankScreenColor(videoInstance.vramTarget, 0);
-	blobBlitTransparent((const uint8_t*) img40x40_badge, 0, 0, 1, 0, 40, 40);
+
 
 	sceneLaserClock += timeGone;
 	calcAllLaserCircles(timeGone, sceneLaserClock);
 	drawAllLaserCircles(timeGone, sceneLaserClock);
 
+	/*
 	if (variant == LSV_MIX1) {
-		uint16_t x1 = 144 + sinTurbo(sceneLaserClock >> 3) * 70.0f;
-		uint16_t y1 = 90 + sinTurbo(((sceneLaserClock >> 3) * 1.5 )) * 50.0f;
+		uint16_t x1 = 144 + sinTurbo(sceneLaserClock >> 3) * 50.0f;
+		uint16_t y1 = 90 + sinTurbo(((sceneLaserClock >> 3) * 1.5 )) * 30.0f;
 		uint8_t *target = videoInstance.vramTarget + x1 + videoInstance.resx * y1;
 		ballInvert32(target);
 	}
+	*/
 
 }
 
@@ -66,31 +73,36 @@ void initAllLaserCircles(enum laserSceneVariant variant) {
 
 	if (variant == LSV_FOUR_BY_THREE) {
 
+		/*
+
 		for(int i=0;i<12;i++) {
 			uint16_t x1 = 10 + (i % 4) * 70;
 			uint16_t y1 = (i >> 2) * 70;
 			initLaserCircle(&instance[usedLasercircleInstances++], x1, y1, 1);
 		}
 
-	} else if (variant == LSV_MIX1) {
+		*/
 
+		initLaserCircle(&instance[usedLasercircleInstances++], 60, 20, 1);
+
+	} else if (variant == LSV_MIX1) {
+/*
 		for(int i=0;i<2;i++) {
-			uint16_t x = 10 + (i+1) * 70;
+			uint16_t x = 10 + (i+1) * 50;
 
 			for(int k=0;k<4;k++) {
-				uint16_t x1 = x + (k%2) * 35;
-				uint16_t y1 = (k >> 1) * 35;
+				uint16_t x1 = x + (k%2) * 30;
+				uint16_t y1 = (k >> 1) * 30;
 				initLaserCircle(&instance[usedLasercircleInstances++], x1 , y1, 2);
 			}
 		}
 
 		for(int i=0;i<3;i++) {
-			initLaserCircle(&instance[usedLasercircleInstances++], 10, i*70, 1);
-			initLaserCircle(&instance[usedLasercircleInstances++], 220, i*70, 1);
+			initLaserCircle(&instance[usedLasercircleInstances++], 10, i*50, 1);
+			initLaserCircle(&instance[usedLasercircleInstances++], 220, i*50, 1);
 		}
-
-
-		initLaserCircle(&instance[usedLasercircleInstances++], 80, 70, 0);
+	*/
+		initLaserCircle(&instance[usedLasercircleInstances++], 60, 20, 0);
 
 	} else {
 		// unknown variant

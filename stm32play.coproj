@@ -504,6 +504,7 @@
     <File name="data/images/320x200" path="" type="2"/>
     <File name="src/soundengine/musicplayer.c" path="src/soundengine/musicplayer.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_lms_f32.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_lms_f32.c" type="1"/>
+    <File name="data/images/280x200/img280x200_title_bw.h" path="data/images/280x200/img280x200_title_bw.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_correlate_q15.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_correlate_q15.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_md5.c" path="src/system/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_md5.c" type="1"/>
     <File name="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_flash.h" path="src/system/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_flash.h" type="1"/>
@@ -593,6 +594,7 @@
     <File name="src/scenes/grafhardtText.c" path="src/scenes/grafhardtText.c" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_correlate_fast_q31.c" path="src/system/cmsis/DSP_Lib/FilteringFunctions/arm_correlate_fast_q31.c" type="1"/>
     <File name="src/synths/xmplayer" path="" type="2"/>
+    <File name="data/fonts/font_blazingStar_bw.h" path="data/fonts/font_blazingStar_bw.h" type="1"/>
     <File name="src/system/cmsis/DSP_Lib/CommonTables/arm_const_structs.c" path="src/system/cmsis/DSP_Lib/CommonTables/arm_const_structs.c" type="1"/>
     <File name="data/fonts/font_epicpin.h" path="data/fonts/font_epicpin.h" type="1"/>
     <File name="data/fonts/font_blazingStar.h" path="data/fonts/font_blazingStar.h" type="1"/>
