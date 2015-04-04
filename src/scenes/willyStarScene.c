@@ -137,7 +137,7 @@ void initWillyCol(float s, gl_color color, uint8_t rS, uint8_t gS, uint8_t bS) {
 
 void sceneWillyStarInit() {
 
-	videoMode(V280x200x8D);
+	videoMode(V280x200x8VD);
 
 	// ------------------- evaluation of GL ---------------------------------
 
@@ -343,9 +343,9 @@ void sceneWillyStarDraw(uint16_t timeGone) {
 	sceneWillyStarCalc(_willyStarRotationZ + 5.026548f, _willyStarRotationX);
 	sceneWillyStarCalc(_willyStarRotationZ + 6.283185, _willyStarRotationX);
 
-	char sbuf[20];
-	sprintf((char*) &sbuf, "%d", (int)timeLocal);
-	fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, sbuf,
-			20, 20);
+	//char sbuf[20];
+	//sprintf((char*) &sbuf, "%d", (int)timeLocal);
+	//fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, sbuf,
+	//		20, 20);
 }
 

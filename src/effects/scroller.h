@@ -72,7 +72,7 @@ static inline void scrollerRenderClippedText(struct t_scrollerInstance *scroller
 
 			float p = 6.28 * ((float) screenX / (float) videoInstance.resx);
 
-			int16_t dy = (int) (50.0f * arm_sin_f32(p + videoInstance.current_frame / 15.0));
+			int16_t dy = (int) (30.0f * arm_sin_f32(p + videoInstance.current_frame / 15.0));
 
 			fontRenderCharLine(scrollerInstance->fontInstance, target, localFrac, screenX, y + dy,
 					scrollerInstance->text[localTextPos]);

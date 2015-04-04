@@ -6,8 +6,6 @@
 #include "effects/simple.h"
 #include "effects/fixedFont.h"
 
-#include "../data/images/280x400/img280x400_spacetits.h"
-
 struct t_scrollerInstance scrollerInstance;
 
 uint8_t sceneGrafHardtInited = 0;
@@ -17,9 +15,9 @@ uint8_t sceneGrafHardtInited = 0;
  */
 void sceneGrafHardtInit() {
 
-	videoMode(V280x400x8V);
+	videoMode(V280x200x8VD);
 
-	scrollerInit(&scrollerInstance, &fontInstanceXenon, "HELLO, REVISION 2015!");
+	scrollerInit(&scrollerInstance, &fontInstanceBlazingStar, "GREETINGS FLY OUT TO FRIEDI AND MR.GROISS (THX FOR THE MICROPHONE!), BOCKY THE ITALIAN STALLION, PRALUCEO AND MR.BRASS...");
 
 	#ifdef FFT_ENABLED
 	fftAnalyzerCalc();
@@ -40,8 +38,6 @@ void sceneGrafHardtDraw(uint16_t timeGone) {
 
 	blankScreen(videoInstance.vramTarget);
 
-	//showImage(videoInstance.vramTarget, img280x400_spacetits);
-
 	#ifdef MUSIC_ENABLED
 	  //analyzerRender(videoInstance.vramTarget);
 	#endif
@@ -49,7 +45,7 @@ void sceneGrafHardtDraw(uint16_t timeGone) {
 	scrollerRender(&scrollerInstance, videoInstance.vramTarget, 0, 100);
 
 	#ifdef FFT_ENABLED
-	fftAnalyzerRenderC(videoInstance.vramTarget, 140, 330);
+	//fftAnalyzerRenderC(videoInstance.vramTarget, 140, 330);
 	//fftAnalyzerRenderB(videoInstance.vramTarget, 10, 330);
 
 	if (videoInstance.current_frame % 3 == 0)

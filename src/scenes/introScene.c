@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 #include "../main.h"
-#include "../data/images/280x200/img280x200_title.h"
+#include "../data/images/280x200/img280x200_title_bw.h"
 #include "effects/simple.h"
 #include "introScene.h"
 #include "fixedFont.h"
@@ -13,12 +13,14 @@ uint8_t sceneIntroInited = 0;
 uint16_t sceneIntroClock = 0;
 
 void sceneIntroInit() {
-	videoMode(V280x200x8D);
-	//videoInstance.switchToBwAtLine[0] = 0;
-	//videoInstance.switchToBwAtLineSize = 1;
-	//videoInstance.switchToColorAtLineSize = 0;
+	videoMode(V280x200x8VD);
 	sceneIntroInited = 1;
 	sceneIntroClock = 0;
+
+	videoInstance.switchToColorAtLine[0] = 0;
+	videoInstance.switchToBwAtLine[0] = 0;
+	videoInstance.switchToColorAtLineSize = 1;
+	videoInstance.switchToBwAtLineSize = 0;
 }
 
 void sceneIntroUninit() {
@@ -56,16 +58,23 @@ void sceneIntroDraw(uint16_t timeGone) {
 		// PAUSE
 	} else if (sceneIntroClock < TIME_FONT(3)) {
 		fontRenderText(&fontInstanceBlazingStar, videoInstance.vramTarget, "A SHORT,", 10, 100);
-		fontRenderText(&fontInstanceXenon, videoInstance.vramTarget, "HALF-ARSED", 10, 130);
+		fontRenderText(&fontInstanceXenon, videoInstance.vramTarget, "HALF ARSED", 10, 130);
 		fontRenderText(&fontInstanceBlazingStar, videoInstance.vramTarget, "PURE-PARTY-PRODUCTION", 10, 160);
 	} else if (sceneIntroClock < TIME_PAUSE(3)) {
 		// PAUSE
 	} else if (sceneIntroClock < TIME_FONT(4)) {
-		fontRenderText(&fontInstanceXenon, videoInstance.vramTarget, "APTLY NAMED...", 10, 130);
+		fontRenderText(&fontInstanceBlazingStar, videoInstance.vramTarget, "PRESENTED AT", 10, 130);
+		fontRenderText(&fontInstanceXenon, videoInstance.vramTarget, "REVISION 2015", 10, 160);
 	} else if (sceneIntroClock < TIME_PAUSE(4)) {
 		// PAUSE
+	} else if (sceneIntroClock < TIME_FONT(5)) {
+		fontRenderText(&fontInstanceXenon, videoInstance.vramTarget, "APTLY NAMED...", 10, 130);
+	} else if (sceneIntroClock < TIME_PAUSE(5)) {
+		// PAUSE
 	} else {
-		showImage(videoInstance.vramTarget, img280x200_title);
+		videoInstance.switchToColorAtLineSize = 0;
+		videoInstance.switchToBwAtLineSize = 1;
+		showImage(videoInstance.vramTarget, img280x200_title_bw);
 	}
 
 }

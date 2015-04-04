@@ -63,8 +63,12 @@ void performanceMeteringRender(uint16_t timeGone) {
 	//sprintf((char*)&sbuf, "b\x01\x01lduck\xb3%01d:%02d.%02d\xb3%05d|%05d|%05d|%03d", videoInstance.tc_min,
 	//		videoInstance.tc_sec, videoInstance.tc_frame, perfCountMin, perfCountAverage, perfCountMax, fpsAverage);
 
-	sprintf((char*)&sbuf, "b\x01\x01lduck\xb3%01d:%02d.%02d\xb3%03d (fps x10)", videoInstance.tc_min,
-			videoInstance.tc_sec, videoInstance.tc_frame, fpsAverage);
+//	sprintf((char*)&sbuf, "b\x01\x01lduck\xb3%01d:%02d.%02d\xb3%03d (fps x10)", videoInstance.tc_min,
+//			videoInstance.tc_sec, videoInstance.tc_frame, fpsAverage);
+
+	sprintf((char*)&sbuf, "b\x01\x01lduck\xb3%01d:%02d.%02d", videoInstance.tc_min,
+			videoInstance.tc_sec, videoInstance.tc_frame);
+
 
 	fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, sbuf, 1, videoInstance.resy - 16);
 
