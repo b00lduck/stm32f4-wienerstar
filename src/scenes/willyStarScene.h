@@ -11,8 +11,9 @@ void sceneWillyStarUninit();
 void sceneWillyStarDraw(uint16_t timeGone);
 
 uint16_t _CounterWZRot, _CounterWXRot, _bigWillyCounter;
-uint16_t _CounterView, _CounterScene;
-bool _isRotatingX, _isRotatingView, _isJump;
+uint16_t _CounterView, _CounterScene, _CounterJumpTime, _CounterJumpNum;
+bool _isRotatingX, _isRotatingView, _isJump,showWilly;
+float _jumpX, _jumpY, _jumpZ, _jumpView;
 
-
+#define LINE_POINT(x,y,z,w,s) ((vec4_t) {s * x , s * y, s * z, w})
 
