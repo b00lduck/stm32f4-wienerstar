@@ -197,13 +197,15 @@ void fftAnalyzerRenderC(uint8_t *target, uint16_t x, uint16_t y) {
 
 	target += y * videoInstance.resx;
 
-	uint8_t buf[videoInstance.resx];
+	//uint8_t buf[videoInstance.resx];
 
+	/*
 	for (i = 0; i < 70; i++) {
 		memcpy(buf, target, videoInstance.resx);
 		int flow = arm_sin_f32(i + videoInstance.current_frame / 10.0f) * 6.5;
 		memcpy(target + (flow * i / 30), buf, videoInstance.resx);
 		target += videoInstance.resx;
 	}
+	*/
 
 }

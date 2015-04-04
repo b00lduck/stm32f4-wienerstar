@@ -3,7 +3,6 @@
 #include <stdlib.h>
 
 #include "../main.h"
-#include "../data/images/280x200/img280x200_title_bw.h"
 #include "effects/simple.h"
 #include "introScene.h"
 #include "fixedFont.h"
@@ -47,7 +46,7 @@ void sceneIntroDraw(uint16_t timeGone) {
 	} else if (sceneIntroClock <  TIME_PAUSE(0)) {
 		// PAUSE
 	} else if (sceneIntroClock < TIME_FONT(1)) {
-		fontRenderText(&fontInstanceBlazingStar, videoInstance.vramTarget, "AS SPECIFCALLY", 10, 100);
+		fontRenderText(&fontInstanceBlazingStar, videoInstance.vramTarget, "AS SPECIFCALLY", 10, 105);
 		fontRenderText(&fontInstanceXenon, videoInstance.vramTarget, "REQUESTED BY", 10, 130);
 		fontRenderText(&fontInstanceBlazingStar, videoInstance.vramTarget, "THE FILMING CREW ON FRIDAY", 10, 160);
 	} else if (sceneIntroClock <  TIME_PAUSE(1)) {
@@ -57,13 +56,13 @@ void sceneIntroDraw(uint16_t timeGone) {
 	} else if (sceneIntroClock < TIME_PAUSE(2)) {
 		// PAUSE
 	} else if (sceneIntroClock < TIME_FONT(3)) {
-		fontRenderText(&fontInstanceBlazingStar, videoInstance.vramTarget, "A SHORT,", 10, 100);
+		fontRenderText(&fontInstanceBlazingStar, videoInstance.vramTarget, "A SHORT,", 10, 105);
 		fontRenderText(&fontInstanceXenon, videoInstance.vramTarget, "HALF ARSED", 10, 130);
 		fontRenderText(&fontInstanceBlazingStar, videoInstance.vramTarget, "PURE-PARTY-PRODUCTION", 10, 160);
 	} else if (sceneIntroClock < TIME_PAUSE(3)) {
 		// PAUSE
 	} else if (sceneIntroClock < TIME_FONT(4)) {
-		fontRenderText(&fontInstanceBlazingStar, videoInstance.vramTarget, "PRESENTED AT", 10, 130);
+		fontRenderText(&fontInstanceBlazingStar, videoInstance.vramTarget, "PRESENTED AT", 10, 135);
 		fontRenderText(&fontInstanceXenon, videoInstance.vramTarget, "REVISION 2015", 10, 160);
 	} else if (sceneIntroClock < TIME_PAUSE(4)) {
 		// PAUSE

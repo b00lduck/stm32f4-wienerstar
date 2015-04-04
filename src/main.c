@@ -1,5 +1,9 @@
 #include "main.h"
 
+#include "../data/images/280x200/img280x200_title_bw.h"
+
+
+
 #ifdef MUSIC_ENABLED
 #include "soundengine/waveplayer.h"
 #include "soundengine/musicplayer.h"
@@ -109,15 +113,13 @@ struct t_scene {
 #define NUMSCENES 9
 
 struct t_scene scenes[NUMSCENES] = {
-		{ .duration = 21000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 300, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 21000, .renderMethod = &sceneIntroDraw},
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
 		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 300, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 300, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 22000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 300, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 40000, .renderMethod = &sceneLineCubeDraw}
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 10000, .renderMethod = &sceneWillyStarDraw},
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 60000, .renderMethod = &sceneWillyStarDraw}
 };
 
 volatile uint32_t globalTime = 0;
@@ -128,6 +130,13 @@ volatile uint32_t globalTime = 0;
 static inline void drawScene(uint16_t timeGone) {
 
 	globalTime += timeGone;
+
+	if ((globalTime > 73000) && (globalTime < 76000)) {
+		showImage(videoInstance.vramTarget, img280x200_title_bw);
+		return;
+	} else {
+
+	}
 
 	volatile uint32_t tempTime = 0;
 

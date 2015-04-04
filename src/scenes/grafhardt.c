@@ -17,7 +17,7 @@ void sceneGrafHardtInit() {
 
 	videoMode(V280x200x8VD);
 
-	scrollerInit(&scrollerInstance, &fontInstanceBlazingStar, "GREETINGS FLY OUT TO FRIEDI AND MR.GROISS (THX FOR THE MICROPHONE!), BOCKY THE ITALIAN STALLION, PRALUCEO AND MR.BRASS...");
+	scrollerInit(&scrollerInstance, &fontInstanceBlazingStar, "GREETINGS FLY OUT TO FRIEDI AND MR.GROISS (THX FOR THE MICROPHONE!), BOCKY THE ITALIAN STALLION, PRALUCEO, MR.BRASS, WALLE AND EDHELLON...");
 
 	#ifdef FFT_ENABLED
 	fftAnalyzerCalc();
@@ -45,7 +45,7 @@ void sceneGrafHardtDraw(uint16_t timeGone) {
 	scrollerRender(&scrollerInstance, videoInstance.vramTarget, 0, 100);
 
 	#ifdef FFT_ENABLED
-	//fftAnalyzerRenderC(videoInstance.vramTarget, 140, 330);
+	//fftAnalyzerRenderC(videoInstance.vramTarget, 100, 100);
 	//fftAnalyzerRenderB(videoInstance.vramTarget, 10, 330);
 
 	if (videoInstance.current_frame % 3 == 0)
