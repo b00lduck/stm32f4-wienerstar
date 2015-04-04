@@ -19,6 +19,7 @@
 
 #include "effects/font.h"
 #include "../data/fonts/font_xenon2.h"
+#include "../data/fonts/font_blazingStar.h"
 
 #include "effects/fixedFont.h"
 #include "effects/tests.h"
@@ -40,6 +41,7 @@
 #include "tools/itoa.h"
 
 struct t_fontInstance fontInstanceXenon;
+struct t_fontInstance fontInstanceBlazingStar;
 
 // TestMode
 uint8_t testMode = 0;
@@ -67,8 +69,7 @@ uint32_t frameCount = 0;
  * - credits: 25 sec
  * - outro (blank): 5 sec
  */
-#define LOADER_TIME 5
-#define INTRO_SCENE_TIME LOADER_TIME + 20
+#define INTRO_SCENE_TIME 18
 #define PLASMA_SCENE_TIME INTRO_SCENE_TIME + 20
 #define CUBE_SCENE_TIME PLASMA_SCENE_TIME + 15
 #define LASER_SCENE_TIME CUBE_SCENE_TIME + 20
@@ -111,17 +112,18 @@ void init() {
 
 	// load fonts
 	fontInit(&fontInstanceXenon, font_xenon2, 663, 23);
+	fontInit(&fontInstanceBlazingStar, font_blazingStar, 505, 17);
 
 #ifdef MUSIC_ENABLED
 	musicInit();
 	audioInit();
 #endif
 
-	//sceneGrafhardtTextInit();
-	//sceneExplicitInit();
 }
 
-uint32_t globalTime = 0;
+uint8_t padding[1000];
+
+volatile uint32_t globalTime = 0;
 
 uint32_t timeInSec(const uint32_t time) {
 	return (time / 1000);
@@ -131,38 +133,32 @@ uint32_t timeInSec(const uint32_t time) {
  * draw the scenes, switching them as we progress in time
  */
 static inline void drawScene(uint16_t timeGone) {
-		sceneWillyStarDraw(timeGone);
-//		sceneLineCubeDraw(timeGone);
 
-//	globalTime += timeGone;
-//
-//	globalTime += timeGone;
-//
-//	if (timeInSec(globalTime < LOADER_TIME)) {
-//		// todo: blank screen?
-//	} else if (timeInSec(globalTime) < INTRO_SCENE_TIME) {
-//		sceneIntroDraw(timeGone);
-//
-//	} else if (timeInSec(globalTime) < PLASMA_SCENE_TIME) {
-//		scenePlasmaDraw(timeGone);
-//
-//	} else if (timeInSec(globalTime) < CUBE_SCENE_TIME) {
-//
-//	} else if (timeInSec(globalTime) < LASER_SCENE_TIME) {
-//		sceneLaserDraw(timeGone, LSV_MIX1);
-//
-//	} else if (timeInSec(globalTime) < FFT_SCENE_TIME) {
-//		sceneGrafHardtDraw(timeGone);
-//
-//	} else if (timeInSec(globalTime) < PIMML_SCENE_TIME) {
-//		sceneWillyStarDraw(timeGone);
-//
-//	} else if (timeInSec(globalTime) < CREDITS_SCENE_TIME) {
-//		// todo: credit scroller
-//
-//	} else {
-//		// blank
-//	}
+	globalTime += timeGone;
+
+	if (timeInSec(globalTime) < INTRO_SCENE_TIME) {
+		sceneIntroDraw(timeGone);
+	} else if (timeInSec(globalTime) < PLASMA_SCENE_TIME) {
+		//scenePlasmaDraw(timeGone);
+	} else if (timeInSec(globalTime) < CUBE_SCENE_TIME) {
+		sceneLineCubeDraw(timeGone);
+	} else if (timeInSec(globalTime) < LASER_SCENE_TIME) {
+		sceneLaserDraw(timeGone, LSV_MIX1);
+	} else if (timeInSec(globalTime) < FFT_SCENE_TIME) {
+		sceneGrafHardtDraw(timeGone);
+	} else if (timeInSec(globalTime) < PIMML_SCENE_TIME) {
+		sceneWillyStarDraw(timeGone);
+	} else if (timeInSec(globalTime) < CREDITS_SCENE_TIME) {
+		// todo: credit scroller
+	} else {
+		// blank
+	}
+
+	char sbuf[50];
+	sprintf((char*)&sbuf, "%d", (int) globalTime);
+
+	fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, sbuf, 1, videoInstance.resy - 32);
+
 }
 
 /**
@@ -195,8 +191,8 @@ int main(void) {
 			// this happens at the end of the visible frame
 			if (videoInstance.vblank_flag || (videoInstance.vblank == 0)) {
 
-				uint32_t msec = videoInstance.current_frame * 16.6667
-						+ videoInstance.current_y * 0.03415;
+				uint32_t msec = videoInstance.current_frame * 16.6667;
+						//+ videoInstance.current_y * 0.03415;
 				uint32_t timeGone = msec - lastMsec;
 
 				// distinct test mode and regular mode
