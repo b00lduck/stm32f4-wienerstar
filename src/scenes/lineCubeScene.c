@@ -112,13 +112,13 @@ void defineCubeCol(sc_cube cube, gl_color color) {
 //}
 
 void initCubes() {
-	cube7 = Cube(CUBE1, -1.0f, -1.0f, 0.0f, 12.0f, mglColor(5, 0, 5));
+	cube1 = Cube(CUBE7, 0.0f, 0.0f, 0.0f, 20.0f, mglColor(0, 0, 7));
 	cube2 = Cube(CUBE2, 0.0f, 0.0f, 0.5f, 4.0f, mglColor(0, 7, 0));
 	cube3 = Cube(CUBE3, 0.0f, 1.2f, -0.5f, 6.0f, mglColor(7, 0, 0));
 	cube4 = Cube(CUBE4, 1.3f, -0.4f, 0.0f, 8.0f, mglColor(2, 4, 6));
 	cube5 = Cube(CUBE5, 1.0f, 0.5f, 0.5f, 3.0f, mglColor(1, 3, 7));
-	cube6 = Cube(CUBE6, -1.0f, 0.5f, -0.5f, 10.0f, mglColor(0, 7, 4));
-	cube1 = Cube(CUBE7, 0.0f, 0.0f, 0.0f, 20.0f, mglColor(0, 0, 7));
+	cube6 = Cube(CUBE6, -1.0f, 0.5f, -0.5f, 10.0f, mglColor(3, 7, 0));
+	cube7 = Cube(CUBE1, -1.0f, -1.0f, 0.0f, 12.0f, mglColor(0, 3, 2));
 }
 void sceneLineCubeInit() {
 	black = (gl_color) {0,0,0};
