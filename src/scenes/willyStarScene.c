@@ -224,11 +224,11 @@ void setCounter(uint16_t timeGone) {
 	} else if (_CounterScene < 1345) {
 	} else if (_CounterScene < 1370) {
 	} else if (_CounterScene < 1375) {
-	} else if (_CounterScene < 2000) {
-	} else if (_CounterScene < 2005) {
+	} else if (_CounterScene < 1800) {
+	} else if (_CounterScene < 1805) {
 		_isRotatingX = true;
-	} else if (_CounterScene < 2500) {
-	} else if (_CounterScene < 2505) {
+	} else if (_CounterScene < 2100) {
+	} else if (_CounterScene < 2105) {
 		_isJump = true;
 	} else if (_CounterScene < 4000) {
 	} else if (_CounterScene < 4005) {
@@ -335,7 +335,7 @@ void setCounter(uint16_t timeGone) {
 
 	}
 
-	_willyStarRotationZ += 0.123f;  //-------------------------
+	_willyStarRotationZ += 0.063f;  //-------------------------
 }
 
 void sceneWillyStarDraw(uint16_t timeGone) {
