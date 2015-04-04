@@ -19,6 +19,7 @@
 
 #include "effects/font.h"
 #include "../data/fonts/font_xenon2.h"
+#include "../data/fonts/font_blazingStar.h"
 
 #include "effects/fixedFont.h"
 #include "effects/tests.h"
@@ -40,6 +41,7 @@
 #include "tools/itoa.h"
 
 struct t_fontInstance fontInstanceXenon;
+struct t_fontInstance fontInstanceBlazingStar;
 
 // TestMode
 uint8_t testMode = 0;
@@ -67,8 +69,7 @@ uint32_t frameCount = 0;
  * - credits: 25 sec
  * - outro (blank): 5 sec
  */
-#define LOADER_TIME 5
-#define INTRO_SCENE_TIME LOADER_TIME + 20
+#define INTRO_SCENE_TIME 18
 #define PLASMA_SCENE_TIME INTRO_SCENE_TIME + 20
 #define CUBE_SCENE_TIME PLASMA_SCENE_TIME + 15
 #define LASER_SCENE_TIME CUBE_SCENE_TIME + 20
@@ -111,6 +112,7 @@ void init() {
 
 	// load fonts
 	fontInit(&fontInstanceXenon, font_xenon2, 663, 23);
+	fontInit(&fontInstanceBlazingStar, font_blazingStar, 505, 17);
 
 #ifdef MUSIC_ENABLED
 	musicInit();
@@ -138,7 +140,7 @@ static inline void drawScene(uint16_t timeGone) {
 
 		sceneIntroDraw(timeGone);
 	} else if (timeInSec(globalTime) < PLASMA_SCENE_TIME) {
-		//scenePlasmaDraw(timeGone);
+		scenePlasmaDraw(timeGone);
 
 	} else if (timeInSec(globalTime) < CUBE_SCENE_TIME) {
 		sceneLineCubeDraw(timeGone);
