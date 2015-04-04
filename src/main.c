@@ -113,24 +113,24 @@ struct t_scene {
 #define NUMSCENES 14
 
 struct t_scene scenes[NUMSCENES] = {
-		{ .duration = 21000, .renderMethod = &sceneIntroDraw},
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 21000, .renderMethod = &sceneWillyStarDraw},
+		{ .duration = 300, .renderMethod = &sceneWillyStarDraw},
 
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
-		{ .duration = 700, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 300, .renderMethod = &sceneWillyStarDraw},
+		{ .duration = 700, .renderMethod = &sceneWillyStarDraw},
 
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
-		{ .duration = 1200, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 300, .renderMethod = &sceneWillyStarDraw},
+		{ .duration = 1200, .renderMethod = &sceneWillyStarDraw},
 
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
-		{ .duration = 7500, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 300, .renderMethod = &sceneWillyStarDraw},
+		{ .duration = 7500, .renderMethod = &sceneWillyStarDraw},
 
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
-		{ .duration = 7500, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 300, .renderMethod = &sceneWillyStarDraw},
+		{ .duration = 7500, .renderMethod = &sceneWillyStarDraw},
 
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 300, .renderMethod = &sceneWillyStarDraw},
 		{ .duration = 10000, .renderMethod = &sceneWillyStarDraw},
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 300, .renderMethod = &sceneWillyStarDraw},
 		{ .duration = 60000, .renderMethod = &sceneWillyStarDraw}
 };
 
