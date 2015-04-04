@@ -233,32 +233,32 @@ void setCounter(uint16_t timeGone) {
 	} else if (_CounterScene < 3000) {
 	} else if (_CounterScene < 3005) {
 		_isRotatingX = true;
-	} else if (_CounterScene < 4000) {
-	} else if (_CounterScene < 4005) {
+	} else if (_CounterScene < 3000) {
+	} else if (_CounterScene < 3005) {
 		showWilly = true;
 		initWilly(1.25f, mglColor(7, 0, 0));
-	} else if (_CounterScene < 4030) {
-	} else if (_CounterScene < 4035) {
+	} else if (_CounterScene < 3030) {
+	} else if (_CounterScene < 3035) {
 		showWilly = false;
 		initWilly(1.25f, mglColor(7, 5, 0));
-	} else if (_CounterScene < 4080) {
-	} else if (_CounterScene < 4085) {
+	} else if (_CounterScene < 3080) {
+	} else if (_CounterScene < 3085) {
 		showWilly = true;
 		initWilly(1.25f, mglColor(3, 0, 5));
-	} else if (_CounterScene < 4110) {
-	} else if (_CounterScene < 4115) {
+	} else if (_CounterScene < 3110) {
+	} else if (_CounterScene < 3115) {
 		showWilly = false;
 		initWilly(1.25f, mglColor(7, 4, 3));
-	} else if (_CounterScene < 4130) {
-	} else if (_CounterScene < 4135) {
+	} else if (_CounterScene < 3130) {
+	} else if (_CounterScene < 3135) {
 		showWilly = true;
 		initWilly(1.25f, mglColor(2, 7, 0));
-	} else if (_CounterScene < 4150) {
-	} else if (_CounterScene < 4155) {
+	} else if (_CounterScene < 3150) {
+	} else if (_CounterScene < 3155) {
 		showWilly = false;
 		initWilly(1.25f, mglColor(0, 0, 7));
-	} else if (_CounterScene < 4180) {
-	} else if (_CounterScene < 4185) {
+	} else if (_CounterScene < 3180) {
+	} else if (_CounterScene < 3185) {
 		showWilly = true;
 		initWilly(1.25f, mglColor(0, 2, 7));
 	} else if (_CounterScene > 50000) {
@@ -331,7 +331,7 @@ void setCounter(uint16_t timeGone) {
 
 	}
 
-	_willyStarRotationZ += 0.124f;  //-------------------------
+	_willyStarRotationZ += 0.063f;  //-------------------------
 }
 
 void sceneWillyStarDraw(uint16_t timeGone) {
