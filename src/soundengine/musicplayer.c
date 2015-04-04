@@ -2,7 +2,7 @@
 #include "musicplayer.h"
 
 #ifdef MODPLAYER_ENABLED
-#include "../../data/music/mod/music_lotus2.h"
+#include "../../data/music/mod/music_mikrofon.h"
 #endif
 
 #ifdef XMPLAYER_ENABLED
