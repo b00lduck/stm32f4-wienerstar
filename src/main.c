@@ -137,26 +137,19 @@ static inline void drawScene(uint16_t timeGone) {
 	globalTime += timeGone;
 
 	if (timeInSec(globalTime) < INTRO_SCENE_TIME) {
-
 		sceneIntroDraw(timeGone);
 	} else if (timeInSec(globalTime) < PLASMA_SCENE_TIME) {
 		scenePlasmaDraw(timeGone);
-
 	} else if (timeInSec(globalTime) < CUBE_SCENE_TIME) {
 		sceneLineCubeDraw(timeGone);
-
 	} else if (timeInSec(globalTime) < LASER_SCENE_TIME) {
 		sceneLaserDraw(timeGone, LSV_MIX1);
-
 	} else if (timeInSec(globalTime) < FFT_SCENE_TIME) {
 		sceneGrafHardtDraw(timeGone);
-
 	} else if (timeInSec(globalTime) < PIMML_SCENE_TIME) {
 		sceneWillyStarDraw(timeGone);
-
 	} else if (timeInSec(globalTime) < CREDITS_SCENE_TIME) {
 		// todo: credit scroller
-
 	} else {
 		// blank
 	}

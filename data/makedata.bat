@@ -49,6 +49,13 @@ CD %DATADIR%\images\280x400
 REM %IMG2H% spacetits png 280 400
 REM %IMG2H% test png 280 400
 
+
+echo =======================================================
+ECHO Converting images 280x200
+echo =======================================================
+CD %DATADIR%\images\280x200
+REM %IMG2H% title png 280 200
+
 echo =======================================================
 ECHO Converting sprites
 echo =======================================================

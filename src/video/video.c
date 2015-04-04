@@ -39,6 +39,8 @@ void videoInit(void) {
 	videoInstance.switchToBwAtLineSize = 0;
 	videoInstance.switchToColorAtLineSize = 0;
 
+	videoInstance.mode = UNINITIALIZED;
+
 	fixedFontInit(&fixedFontInstanceVga, font_vga8x16, 8, 16);
 }
 
@@ -62,6 +64,8 @@ void videoClearTextmem() {
  * set video mode
  */
 void videoMode(enum e_videoMode videoMode) {
+
+	if (videoMode == videoInstance.mode) return;
 
 	// remember choosen mode
 	videoInstance.mode = videoMode;
