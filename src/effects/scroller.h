@@ -9,13 +9,13 @@ struct t_scrollerInstance {
 
 	struct t_fontInstance *fontInstance;
 
-	uint16_t pixelPosition;
+	uint32_t pixelPosition;
 	char* text;
-	uint16_t textLen;
+	uint32_t textLen;
 
 	uint8_t currentFrac;
-	int16_t textPosition;
-	int16_t currentStartPause;
+	int32_t textPosition;
+	int32_t currentStartPause;
 
 };
 
@@ -56,8 +56,8 @@ static inline void putPixel(struct t_scrollerInstance *scrollerInstance, uint8_t
 static inline void scrollerRenderClippedText(struct t_scrollerInstance *scrollerInstance, uint8_t *target,
 		int16_t startx, int16_t endx, uint16_t y) {
 
-	int16_t scrollerX;
-	int16_t screenX = scrollerInstance->currentStartPause + 1;
+	int32_t scrollerX;
+	int32_t screenX = scrollerInstance->currentStartPause + 1;
 
 	uint8_t localFrac = scrollerInstance->currentFrac;
 	uint8_t localTextPos = scrollerInstance->textPosition;

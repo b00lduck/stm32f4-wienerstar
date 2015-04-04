@@ -106,14 +106,14 @@ void init() {
 }
 
 struct t_scene {
-	uint16_t duration;
+	uint32_t duration;
     void (*renderMethod)(uint16_t);
 };
 
-#define NUMSCENES 14
+#define NUMSCENES 16
 
 struct t_scene scenes[NUMSCENES] = {
-		{ .duration = 21000, .renderMethod = &sceneIntroDraw},
+		{ .duration = 20000, .renderMethod = &sceneIntroDraw},
 		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
 
 		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
@@ -123,15 +123,18 @@ struct t_scene scenes[NUMSCENES] = {
 		{ .duration = 1200, .renderMethod = &sceneLineCubeDraw},
 
 		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
-		{ .duration = 7500, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 7000, .renderMethod = &sceneLineCubeDraw},
 
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
-		{ .duration = 7500, .renderMethod = &sceneLineCubeDraw},
+		{ .duration = 250, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 3700, .renderMethod = &sceneLineCubeDraw},
 
-		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 250, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 3700, .renderMethod = &sceneLineCubeDraw},
+
+		{ .duration = 250, .renderMethod = &sceneLaserDraw1},
 		{ .duration = 10000, .renderMethod = &sceneWillyStarDraw},
 		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
-		{ .duration = 60000, .renderMethod = &sceneWillyStarDraw}
+		{ .duration = 90000, .renderMethod = &sceneWillyStarDraw}
 };
 
 volatile uint32_t globalTime = 0;
@@ -143,7 +146,7 @@ static inline void drawScene(uint16_t timeGone) {
 
 	globalTime += timeGone;
 
-	if ((globalTime > 73000) && (globalTime < 76000)) {
+	if ((globalTime > 75000) && (globalTime < 78500)) {
 		videoInstance.switchToColorAtLine[0] = 0;
 		videoInstance.switchToBwAtLine[0] = 0;
 		videoInstance.switchToColorAtLineSize = 0;
@@ -159,7 +162,7 @@ static inline void drawScene(uint16_t timeGone) {
 
 	volatile uint32_t tempTime = 0;
 
-	for (int i=0;i<NUMSCENES;i++) {
+	for (int i=0;i<NUMSCENES;i++) {2353
 		tempTime += scenes[i].duration;
 		if (tempTime > globalTime) {
 			scenes[i].renderMethod(timeGone);

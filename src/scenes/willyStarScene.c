@@ -21,7 +21,8 @@ float _willyStarRotationX = 0.0f;
 float _willyStarRotationY = 0.0f;
 float _willyStarRotationZ = 0.0f;
 
-struct t_scrollerInstance scrollerInstance;
+struct t_scrollerInstance scrollerInstance1;
+struct t_scrollerInstance scrollerInstance2;
 
 vec3_t _lCcenterPosition;
 vec3_t _lCupVector;
@@ -142,7 +143,8 @@ void sceneWillyStarInit() {
 
 	videoMode(V280x200x8VD);
 
-	scrollerInit(&scrollerInstance, &fontInstanceBlazingStar, "GREETINGS FLY OUT TO FRIEDI AND MR.GROISS (THX FOR THE MICROPHONE!), BOCKY THE ITALIAN STALLION, PRALUCEO, MR.BRASS, WALLE AND EDHELLON...                                                                                                                                                                                                                                                                      ");
+	scrollerInit(&scrollerInstance1, &fontInstanceBlazingStar, "GREETINGS FLY OUT TO FRIEDI AND MR.GROISS (THX FOR THE MICROPHONE!), BOCKY THE ITALIAN STALLION, PRALUCEO, MR.BRASS, WALLE AND EDHELLON!");
+	scrollerInit(&scrollerInstance2, &fontInstanceBlazingStar, "...OKAY, BACK TO THE SCROLLER. WE WISH ALL SCENERS A GREAT PARTY, YOU ROCK! AND DONT FORGET TO VOTE FOR THE PIMMELSTERN!!!1!");
 
 	// ------------------- evaluation of GL ---------------------------------
 
@@ -352,8 +354,12 @@ void sceneWillyStarDraw(uint16_t timeGone) {
 	sceneWillyStarCalc(_willyStarRotationZ + 5.026548f, _willyStarRotationX);
 	sceneWillyStarCalc(_willyStarRotationZ + 6.283185, _willyStarRotationX);
 
-	if (willySceneClock >= 10000) {
-		scrollerRender(&scrollerInstance, videoInstance.vramTarget, 0, 130);
+	if ((willySceneClock >= 10000) && (willySceneClock < 25000)) {
+		scrollerRender(&scrollerInstance1, videoInstance.vramTarget, 0, 130);
+	}
+
+	if (willySceneClock >= 40000) {
+		scrollerRender(&scrollerInstance2, videoInstance.vramTarget, 0, 130);
 	}
 
 	char sbuf[20];
