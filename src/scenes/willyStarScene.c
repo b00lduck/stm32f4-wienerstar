@@ -202,7 +202,11 @@ void sceneWillyStarCalc(float rotationZ, float rotationX) {
 	mglRenderLines(videoInstance.vramTarget, _modelLineArray, NUM_LINES);
 }
 
+uint32_t willySceneClock = 0;
+
 void setCounter(uint16_t timeGone) {
+
+	willySceneClock += timeGone;
 
 	// Scenen Counter
 	_CounterScene += 1;
@@ -348,7 +352,7 @@ void sceneWillyStarDraw(uint16_t timeGone) {
 	sceneWillyStarCalc(_willyStarRotationZ + 5.026548f, _willyStarRotationX);
 	sceneWillyStarCalc(_willyStarRotationZ + 6.283185, _willyStarRotationX);
 
-	if (_CounterScene >= 10000) {
+	if (willySceneClock >= 10000) {
 		scrollerRender(&scrollerInstance, videoInstance.vramTarget, 0, 100);
 	}
 
