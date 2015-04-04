@@ -230,41 +230,37 @@ void setCounter(uint16_t timeGone) {
 	} else if (_CounterScene < 2100) {
 	} else if (_CounterScene < 2105) {
 		_isJump = true;
+	} else if (_CounterScene < 3000) {
+	} else if (_CounterScene < 3005) {
+		_isRotatingX = true;
 	} else if (_CounterScene < 4000) {
 	} else if (_CounterScene < 4005) {
-		_isRotatingX = true;
-	} else if (_CounterScene < 5000) {
-	} else if (_CounterScene < 5005) {
 		showWilly = true;
 		initWilly(1.25f, mglColor(7, 0, 0));
-	} else if (_CounterScene < 5030) {
-	} else if (_CounterScene < 5035) {
+	} else if (_CounterScene < 4030) {
+	} else if (_CounterScene < 4035) {
 		showWilly = false;
 		initWilly(1.25f, mglColor(7, 5, 0));
-	} else if (_CounterScene < 5080) {
-	} else if (_CounterScene < 5085) {
+	} else if (_CounterScene < 4080) {
+	} else if (_CounterScene < 4085) {
 		showWilly = true;
 		initWilly(1.25f, mglColor(3, 0, 5));
-	} else if (_CounterScene < 5110) {
-	} else if (_CounterScene < 5115) {
+	} else if (_CounterScene < 4110) {
+	} else if (_CounterScene < 4115) {
 		showWilly = false;
 		initWilly(1.25f, mglColor(7, 4, 3));
-	} else if (_CounterScene < 5130) {
-	} else if (_CounterScene < 5135) {
+	} else if (_CounterScene < 4130) {
+	} else if (_CounterScene < 4135) {
 		showWilly = true;
 		initWilly(1.25f, mglColor(2, 7, 0));
-	} else if (_CounterScene < 5150) {
-	} else if (_CounterScene < 5155) {
+	} else if (_CounterScene < 4150) {
+	} else if (_CounterScene < 4155) {
 		showWilly = false;
 		initWilly(1.25f, mglColor(0, 0, 7));
-	} else if (_CounterScene < 5180) {
-	} else if (_CounterScene < 5185) {
+	} else if (_CounterScene < 4180) {
+	} else if (_CounterScene < 4185) {
 		showWilly = true;
 		initWilly(1.25f, mglColor(0, 2, 7));
-	} else if (_CounterScene < 5180) {
-	} else if (_CounterScene < 5185) {
-		showWilly = false;
-		initWilly(1.25f, mglColor(7, 0, 0));
 	} else if (_CounterScene > 50000) {
 		_CounterScene = 0;
 		_isRotatingX = false;
