@@ -6,6 +6,7 @@
 #include "mgl/mgl.h"
 #include "effects/simple.h"
 #include "effects/line.h"
+#include "effects/scroller.h"
 #include "willyStarScene.h"
 #include "fixedFont.h"
 
@@ -19,6 +20,8 @@ float _ViewRotationY = 0.0f;
 float _willyStarRotationX = 0.0f;
 float _willyStarRotationY = 0.0f;
 float _willyStarRotationZ = 0.0f;
+
+struct t_scrollerInstance scrollerInstance;
 
 vec3_t _lCcenterPosition;
 vec3_t _lCupVector;
@@ -138,6 +141,8 @@ void initWillyCol(float s, gl_color color, uint8_t rS, uint8_t gS, uint8_t bS) {
 void sceneWillyStarInit() {
 
 	videoMode(V280x200x8VD);
+
+	scrollerInit(&scrollerInstance, &fontInstanceBlazingStar, "GREETINGS FLY OUT TO FRIEDI AND MR.GROISS (THX FOR THE MICROPHONE!), BOCKY THE ITALIAN STALLION, PRALUCEO, MR.BRASS, WALLE AND EDHELLON...");
 
 	// ------------------- evaluation of GL ---------------------------------
 
@@ -343,9 +348,13 @@ void sceneWillyStarDraw(uint16_t timeGone) {
 	sceneWillyStarCalc(_willyStarRotationZ + 5.026548f, _willyStarRotationX);
 	sceneWillyStarCalc(_willyStarRotationZ + 6.283185, _willyStarRotationX);
 
-	//char sbuf[20];
-	//sprintf((char*) &sbuf, "%d", (int)timeLocal);
-	//fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, sbuf,
-	//		20, 20);
+	if (_CounterScene >= 10000) {
+		scrollerRender(&scrollerInstance, videoInstance.vramTarget, 0, 100);
+	}
+
+	char sbuf[20];
+	sprintf((char*) &sbuf, "%d", (int)timeLocal);
+	fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, sbuf,
+			20, 20);
 }
 
