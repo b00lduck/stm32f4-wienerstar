@@ -276,8 +276,8 @@ void setCounter(uint16_t timeGone) {
 
 	if (_isRotatingView) {
 //		_ViewRotationX += 0.0031416;
-		_ViewRotationY += 0.0031;
-		_ViewRotationX += 0.0126;
+		_ViewRotationY += 0.0063;// ---------------
+		_ViewRotationX += 0.025;// ---------------
 	}
 
 	// Willy X Rotation Counter
@@ -286,7 +286,7 @@ void setCounter(uint16_t timeGone) {
 			_isRotatingX = false;
 			_willyStarRotationX = 0.0;
 		}
-		_willyStarRotationX += 0.0063;
+		_willyStarRotationX += 0.0123;   // ---------------
 //		_willyStarRotationX += 0.0031416;
 	}
 
