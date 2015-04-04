@@ -204,18 +204,18 @@ void sceneWillyStarCalc(float rotationZ, float rotationX) {
 	mglRenderLines(videoInstance.vramTarget, _modelLineArray, NUM_LINES);
 }
 
-uint32_t willySceneClock = 0;
+//uint32_t willySceneClock = 0;
 
 void setCounter(uint16_t timeGone) {
 
-	willySceneClock += timeGone;
+//	willySceneClock += timeGone;
 
 	// Scenen Counter
 	_CounterScene += 1;
 	if (_CounterScene < 500) {
-	} else if (_CounterScene < 510) {
+	} else if (_CounterScene < 310) {
 		_isJump = true;
-	} else if (_CounterScene < 800) {
+	} else if (_CounterScene < 330) {
 	} else if (_CounterScene < 810) {
 
 	} else if (_CounterScene < 1000) {
@@ -358,9 +358,9 @@ void sceneWillyStarDraw(uint16_t timeGone) {
 		scrollerRender(&scrollerInstance2, videoInstance.vramTarget, 0, 130);
 	}
 
-	char sbuf[20];
-	sprintf((char*) &sbuf, "%d", (int)timeLocal);
-	fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, sbuf,
-			20, 20);
+//	char sbuf[20];
+//	sprintf((char*) &sbuf, "%d", (int)timeLocal);
+//	fixedFontDrawString(&fixedFontInstanceVga, videoInstance.vramTarget, sbuf,
+//			20, 20);
 }
 
