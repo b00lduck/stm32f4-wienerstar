@@ -38,5 +38,7 @@ static inline gl_line_t mglLineV3f(vec4_t startPoint, float bx, float by, float 
 	return (gl_line_t) {startPoint, _pointB, color};
 }
 
+#define LINE_POINT(x,y,z,w,s) ((vec4_t) {s * x , s * y, s * z, w})
+
 
 #endif
