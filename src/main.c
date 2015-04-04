@@ -132,10 +132,17 @@ static inline void drawScene(uint16_t timeGone) {
 	globalTime += timeGone;
 
 	if ((globalTime > 73000) && (globalTime < 76000)) {
+		videoInstance.switchToColorAtLine[0] = 0;
+		videoInstance.switchToBwAtLine[0] = 0;
+		videoInstance.switchToColorAtLineSize = 0;
+		videoInstance.switchToBwAtLineSize = 1;
 		showImage(videoInstance.vramTarget, img280x200_title_bw);
 		return;
 	} else {
-
+		videoInstance.switchToColorAtLine[0] = 0;
+		videoInstance.switchToBwAtLine[0] = 0;
+		videoInstance.switchToColorAtLineSize = 1;
+		videoInstance.switchToBwAtLineSize = 0;
 	}
 
 	volatile uint32_t tempTime = 0;
