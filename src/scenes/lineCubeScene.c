@@ -8,7 +8,7 @@
 #include "effects/line.h"
 #include "lineCubeScene.h"
 
-int timeOffset = 0;
+int timeOffset = 2000;
 #define CUBE1 0
 #define CUBE2 CUBE1 + 12
 #define CUBE3 CUBE2 + 12
@@ -111,10 +111,10 @@ void defineCubeCol(sc_cube cube, gl_color color) {
 
 void initCubes() {
 	cube1 = Cube(CUBE1,0.0f, 0.0f, 0.0f, 20.0f, mglColor(0, 0, 7));
-	cube2 = Cube(CUBE2, 0.0f, 0.0f, 1.0f, 4.0f, mglColor(0, 7, 0));
-	cube3 = Cube(CUBE3, 0.0f, 1.0f, 0.0f, 4.0f, mglColor(7, 0, 0));
-	cube4 = Cube(CUBE4, 0.0f, 1.0f, 0.0f, 4.0f, mglColor(7, 0, 0));
-	cube5 = Cube(CUBE5, 0.0f, 1.0f, 0.0f, 4.0f, mglColor(7, 0, 0));
+	cube2 = Cube(CUBE2, 0.0f, 0.0f, 0.5f, 4.0f, mglColor(0, 7, 0));
+	cube3 = Cube(CUBE3, 0.0f, 1.2f, 0.0f, 6.0f, mglColor(7, 0, 0));
+	cube4 = Cube(CUBE4, 1.3f, 1.0f, 0.0f, 8.0f, mglColor(2, 4, 6));
+	cube5 = Cube(CUBE5, 2.0f, 0.5f, 0.0f, 3.0f, mglColor(1, 3, 7));
 }
 void sceneLineCubeInit() {
 	black = (gl_color) {0,0,0};
@@ -189,34 +189,28 @@ void setTimer() {
 	if (sceneLineCubeClock > timeOffset + 5000) {isRotate = true;}
 	if (sceneLineCubeClock > timeOffset + 7000) {defineCube(cube3);}
 	if (sceneLineCubeClock > timeOffset + 7002) {	}
+	if (sceneLineCubeClock > timeOffset + 8000) {defineCube(cube4);}
+	if (sceneLineCubeClock > timeOffset + 8002) {	}
+	if (sceneLineCubeClock > timeOffset + 9000) {defineCube(cube5);}
+	if (sceneLineCubeClock > timeOffset + 9002) {	}
 
-	if (sceneLineCubeClock > timeOffset + 7500) {defineCube(cube2);}
-	if (sceneLineCubeClock > timeOffset + 7530) {defineCubeCol(cube2, black);}
-	if (sceneLineCubeClock > timeOffset + 7560) {defineCube(cube2);}
-	if (sceneLineCubeClock > timeOffset + 7590) {defineCubeCol(cube2, black);}
-	if (sceneLineCubeClock > timeOffset + 7620) {defineCube(cube2);}
-	if (sceneLineCubeClock > timeOffset + 7650) {defineCubeCol(cube2, black);}
-	if (sceneLineCubeClock > timeOffset + 7680) {defineCube(cube2);}
-	if (sceneLineCubeClock > timeOffset + 7700) {defineCubeCol(cube2, black);}
-	if (sceneLineCubeClock > timeOffset + 7620) {defineCube(cube2);}
+	if (sceneLineCubeClock > timeOffset + 7500) {_rotationOffset = 2.0f;}
+	if (sceneLineCubeClock > timeOffset + 7530) {_rotationOffset = 0.0f; }
+	if (sceneLineCubeClock > timeOffset + 7560) {_rotationOffset = 2.0f;}
+	if (sceneLineCubeClock > timeOffset + 7590) {_rotationOffset = 0.0f;}
+	if (sceneLineCubeClock > timeOffset + 7620) {_rotationOffset = 2.0f;}
+	if (sceneLineCubeClock > timeOffset + 7650) {_rotationOffset = 0.0f;}
+	if (sceneLineCubeClock > timeOffset + 7680) {_rotationOffset = 2.0f;}
+	if (sceneLineCubeClock > timeOffset + 7700) {_rotationOffset = 0.0f;}
+	if (sceneLineCubeClock > timeOffset + 7620) {_rotationOffset = 2.0f;}
 	if (sceneLineCubeClock > 10000) {
-		if(isDefineFirstCubes) {
-		defineCube(cube2);
-		isDefineFirstCubes = false;
-		}
 	}
 	if (sceneLineCubeClock > 10300) {
-
-		defineCubeCol(cube2, mglColor(0, 0, 0));
 	}
 	if (sceneLineCubeClock > 10302) {
 
 	}
 	if (sceneLineCubeClock > 13000) {
-		if(isDefineSecCubes) {
-		defineCube(cube3);
-		isDefineSecCubes = false;
-		}
 	}
 }
 void sceneLineCubeDraw(uint16_t timeGone) {
