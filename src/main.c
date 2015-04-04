@@ -139,7 +139,7 @@ static inline void drawScene(uint16_t timeGone) {
 	if (timeInSec(globalTime) < INTRO_SCENE_TIME) {
 		sceneIntroDraw(timeGone);
 	} else if (timeInSec(globalTime) < PLASMA_SCENE_TIME) {
-		scenePlasmaDraw(timeGone);
+		//scenePlasmaDraw(timeGone);
 	} else if (timeInSec(globalTime) < CUBE_SCENE_TIME) {
 		sceneLineCubeDraw(timeGone);
 	} else if (timeInSec(globalTime) < LASER_SCENE_TIME) {
