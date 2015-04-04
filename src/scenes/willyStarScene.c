@@ -142,7 +142,7 @@ void sceneWillyStarInit() {
 
 	videoMode(V280x200x8VD);
 
-	scrollerInit(&scrollerInstance, &fontInstanceBlazingStar, "GREETINGS FLY OUT TO FRIEDI AND MR.GROISS (THX FOR THE MICROPHONE!), BOCKY THE ITALIAN STALLION, PRALUCEO, MR.BRASS, WALLE AND EDHELLON...");
+	scrollerInit(&scrollerInstance, &fontInstanceBlazingStar, "GREETINGS FLY OUT TO FRIEDI AND MR.GROISS (THX FOR THE MICROPHONE!), BOCKY THE ITALIAN STALLION, PRALUCEO, MR.BRASS, WALLE AND EDHELLON...                                                                                                                                                                                                                                                                      ");
 
 	// ------------------- evaluation of GL ---------------------------------
 
@@ -353,7 +353,7 @@ void sceneWillyStarDraw(uint16_t timeGone) {
 	sceneWillyStarCalc(_willyStarRotationZ + 6.283185, _willyStarRotationX);
 
 	if (willySceneClock >= 10000) {
-		scrollerRender(&scrollerInstance, videoInstance.vramTarget, 0, 100);
+		scrollerRender(&scrollerInstance, videoInstance.vramTarget, 0, 130);
 	}
 
 	char sbuf[20];

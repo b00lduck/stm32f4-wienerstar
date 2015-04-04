@@ -67,7 +67,7 @@ void sceneIntroDraw(uint16_t timeGone) {
 	} else if (sceneIntroClock < TIME_PAUSE(4)) {
 		// PAUSE
 	} else if (sceneIntroClock < TIME_FONT(5)) {
-		fontRenderText(&fontInstanceXenon, videoInstance.vramTarget, "APTLY NAMED...", 10, 130);
+		fontRenderText(&fontInstanceXenon, videoInstance.vramTarget, "APTLY NAMED...", 10, 160);
 	} else if (sceneIntroClock < TIME_PAUSE(5)) {
 		// PAUSE
 	} else {

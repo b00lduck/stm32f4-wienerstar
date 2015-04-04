@@ -110,16 +110,28 @@ struct t_scene {
     void (*renderMethod)(uint16_t);
 };
 
-#define NUMSCENES 9
+#define NUMSCENES 14
 
 struct t_scene scenes[NUMSCENES] = {
-		{ .duration = 21000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 300, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 300, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 10000, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 300, .renderMethod = &sceneLineCubeDraw},
-		{ .duration = 60000, .renderMethod = &sceneLineCubeDraw}
+		{ .duration = 21000, .renderMethod = &sceneIntroDraw},
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 700, .renderMethod = &sceneLineCubeDraw},
+
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 1200, .renderMethod = &sceneLineCubeDraw},
+
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 7500, .renderMethod = &sceneLineCubeDraw},
+
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 7500, .renderMethod = &sceneLineCubeDraw},
+
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 10000, .renderMethod = &sceneWillyStarDraw},
+		{ .duration = 300, .renderMethod = &sceneLaserDraw1},
+		{ .duration = 60000, .renderMethod = &sceneWillyStarDraw}
 };
 
 volatile uint32_t globalTime = 0;
