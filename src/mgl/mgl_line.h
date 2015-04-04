@@ -31,6 +31,7 @@ static inline gl_line_t mglLine33f(float ax, float ay, float az, float bx, float
 	return (gl_line_t) {_pointA, _pointB, color};
 }
 
+
 static inline gl_line_t mglLineV3f(vec4_t startPoint, float bx, float by, float bz, gl_color color)
 {
 	vec4_t _pointB = vec4(bx,by,bz,1.0f);
