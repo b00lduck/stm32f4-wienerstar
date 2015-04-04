@@ -9,6 +9,9 @@ void sceneLaserDraw(uint16_t timeGone, enum laserSceneVariant variant);
 void sceneLaserUninit();
 void sceneLaserInit(enum laserSceneVariant variant);
 
+void sceneLaserDraw1(uint16_t timeGone);
+void sceneLaserDraw2(uint16_t timeGone);
+
 
 
 // private

@@ -30,7 +30,7 @@ void sceneLaserUninit() {
 	sceneLaserInited = 0;
 }
 
-void sceneLaserDraw(uint16_t timeGone, enum laserSceneVariant variant) {
+void sceneLaserDrawVar(uint16_t timeGone, enum laserSceneVariant variant) {
 
 	if ((!sceneLaserInited) || (variant != sceneLaserVariantInited)) {
 		sceneLaserInit(variant);
@@ -50,6 +50,14 @@ void sceneLaserDraw(uint16_t timeGone, enum laserSceneVariant variant) {
 		ballInvert32(target);
 	}
 
+}
+
+void sceneLaserDraw1(uint16_t timeGone) {
+	sceneLaserDrawVar(timeGone, LSV_MIX1);
+}
+
+void sceneLaserDraw2(uint16_t timeGone) {
+	sceneLaserDrawVar(timeGone, LSV_FOUR_BY_THREE);
 }
 
 void initAllLaserCircles(enum laserSceneVariant variant) {
