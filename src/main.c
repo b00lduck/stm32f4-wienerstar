@@ -132,6 +132,7 @@ uint32_t timeInSec(const uint32_t time) {
  */
 static inline void drawScene(uint16_t timeGone) {
 		sceneWillyStarDraw(timeGone);
+//		sceneLineCubeDraw(timeGone);
 
 //	globalTime += timeGone;
 //
@@ -146,7 +147,6 @@ static inline void drawScene(uint16_t timeGone) {
 //		scenePlasmaDraw(timeGone);
 //
 //	} else if (timeInSec(globalTime) < CUBE_SCENE_TIME) {
-//		sceneLineCubeDraw(timeGone);
 //
 //	} else if (timeInSec(globalTime) < LASER_SCENE_TIME) {
 //		sceneLaserDraw(timeGone, LSV_MIX1);

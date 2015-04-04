@@ -50,8 +50,18 @@ void sceneLineCubeInit() {
 	_lCviewMatrix = mat4x4lookat(_lCeyePosition, _lCcenterPosition, _lCupVector);
 
 	gl_color color = mglColor(1.0, 1.0, 1.0);
+	float w = 1.0f;
+	float s = 1.0f;
+	vec4_t point1 = LINE_POINT(-1.0f, -1.0f, -1.0f, w, s);
+//	vec4_t point2 = LINE_POINT( 1.0f, -1.0f, -1.0f, w, s);
+	vec4_t point3 = LINE_POINT(-1.0f,  1.0f, -1.0f, w, s);
+//	vec4_t point4 = LINE_POINT( 1.0f,  1.0f, -1.0f, w, s);
+//	vec4_t point5 = LINE_POINT(-1.0f, -1.0f,  1.0f, w, s);
+//	vec4_t point6 = LINE_POINT( 1.0f, -1.0f,  1.0f, w, s);
+//	vec4_t point7 = LINE_POINT(-1.0f,  1.0f,  1.0f, w, s);
+//	vec4_t point8 = LINE_POINT( 1.0f, -1.0f,  1.0f, w, s);
 
-	_modelLineArray[0] = mglLine33f(-1.0, -1.0, -1.0,  1.0, -1.0, -1.0, color);
+	_modelLineArray[0] = (gl_line_t) {point1, point3, color};
 	_modelLineArray[1] = mglLine33f(-1.0, -1.0, -1.0, -1.0,  1.0, -1.0, color);
 	_modelLineArray[2] = mglLine33f( 1.0, -1.0, -1.0,  1.0,  1.0, -1.0, color);
 	_modelLineArray[3] = mglLine33f(-1.0,  1.0, -1.0,  1.0,  1.0, -1.0, color);
@@ -97,11 +107,5 @@ void sceneLineCubeDraw(uint16_t timeGone) {
 	blankScreen(videoInstance.vramTarget);
 	mglRenderLines(videoInstance.vramTarget, _modelLineArray, NUM_LINES);
 
-
-	drawWuLine(videoInstance.vramTarget, 1, 1, 30, 15);
-	drawWuLine(videoInstance.vramTarget, 1, 1, 15, 30);
-	drawWuLine(videoInstance.vramTarget, 1, 1, 30, 30);
-	drawWuLine(videoInstance.vramTarget, 1, 1, 30, 1);
-	drawWuLine(videoInstance.vramTarget, 1, 1, 1, 30);
 }
 

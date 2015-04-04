@@ -15,5 +15,4 @@ uint16_t _CounterView, _CounterScene, _CounterJumpTime, _CounterJumpNum;
 bool _isRotatingX, _isRotatingView, _isJump,showWilly;
 float _jumpX, _jumpY, _jumpZ, _jumpView;
 
-#define LINE_POINT(x,y,z,w,s) ((vec4_t) {s * x , s * y, s * z, w})
 

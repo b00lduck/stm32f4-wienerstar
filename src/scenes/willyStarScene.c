@@ -33,7 +33,7 @@ bool showWillyEffect;
 void initWilly(float s, gl_color color) {
 
 	float w = 1.0f;
-	vec4_t pointA = (vec4_t) {s * 0.0f , s * 0.9f, s * 0.0f, 1.0f};
+	vec4_t pointA = LINE_POINT(0.0f, 0.9f, 0.0f, w, s);
 			vec4_t point1 = LINE_POINT(-0.08f, 0.82f, 0.0f, w, s);
 			vec4_t point2 = LINE_POINT(0.0f, 0.8f, 0.0f, w, s);
 			vec4_t point3 = LINE_POINT(0.08f, 0.82f, 0.0f, w, s);
@@ -209,6 +209,12 @@ void setCounter(uint16_t timeGone) {
 
 	} else if (_CounterScene < 1000) {
 		_isRotatingView = true;
+	} else if (_CounterScene < 1300) {
+	} else if (_CounterScene < 1305) {
+	} else if (_CounterScene < 1340) {
+	} else if (_CounterScene < 1345) {
+	} else if (_CounterScene < 1370) {
+	} else if (_CounterScene < 1375) {
 	} else if (_CounterScene < 2000) {
 	} else if (_CounterScene < 2005) {
 		_isRotatingX = true;
@@ -222,16 +228,32 @@ void setCounter(uint16_t timeGone) {
 	} else if (_CounterScene < 5005) {
 		showWilly = true;
 		initWilly(1.25f, mglColor(7, 0, 0));
-	} else if (_CounterScene < 5050) {
-	} else if (_CounterScene < 5055) {
+	} else if (_CounterScene < 5030) {
+	} else if (_CounterScene < 5035) {
 		showWilly = false;
-		initWilly(1.25f, mglColor(7, 0, 0));
-	} else if (_CounterScene < 5100) {
-	} else if (_CounterScene < 5105) {
+		initWilly(1.25f, mglColor(7, 5, 0));
+	} else if (_CounterScene < 5080) {
+	} else if (_CounterScene < 5085) {
 		showWilly = true;
-		initWilly(1.25f, mglColor(7, 0, 0));
+		initWilly(1.25f, mglColor(3, 0, 5));
+	} else if (_CounterScene < 5110) {
+	} else if (_CounterScene < 5115) {
+		showWilly = false;
+		initWilly(1.25f, mglColor(7, 4, 3));
+	} else if (_CounterScene < 5130) {
+	} else if (_CounterScene < 5135) {
+		showWilly = true;
+		initWilly(1.25f, mglColor(2, 7, 0));
 	} else if (_CounterScene < 5150) {
 	} else if (_CounterScene < 5155) {
+		showWilly = false;
+		initWilly(1.25f, mglColor(0, 0, 7));
+	} else if (_CounterScene < 5180) {
+	} else if (_CounterScene < 5185) {
+		showWilly = true;
+		initWilly(1.25f, mglColor(0, 2, 7));
+	} else if (_CounterScene < 5180) {
+	} else if (_CounterScene < 5185) {
 		showWilly = false;
 		initWilly(1.25f, mglColor(7, 0, 0));
 	} else if (_CounterScene > 50000) {
