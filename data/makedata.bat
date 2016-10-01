@@ -63,11 +63,6 @@ echo =======================================================
 CD %DATADIR%\fonts
 %FONT2H% xenon2 bmp
 %FONT2H% blazingStar bmp
-%FONT2H% blazingStar2 bmp
-%FONT2H% bubsy bmp
-%FONT2H% epicpin bmp
-%FONT2H% ascii_vga png
-%FONT2H% ascii_cga png
 %FONT2H% vga8x16 png
 
 
